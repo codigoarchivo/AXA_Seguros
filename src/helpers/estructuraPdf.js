@@ -337,11 +337,45 @@ export const estructuraPdf4 = (doc) => {
   doc.line(10, 194, 204, 194); // horizontal line
   doc.line(10, 165, 10, 194); // vertical line
   doc.line(204, 165, 204, 194); // vertical line
-  // cuadro6
+  // cuadro6--
   doc.line(10, 198, 204, 198); // horizontal line
-  doc.line(10, 270, 204, 270); // horizontal line
-  doc.line(10, 270, 10, 198); // vertical line
-  doc.line(204, 270, 204, 198); // vertical line
-
+  doc.line(10, 206, 204, 206); // horizontal line
+  doc.line(10, 206, 10, 198); // vertical line
+  doc.line(204, 206, 204, 198); // vertical line
+  // cuadro7
+  doc.line(10, 206, 204, 206); // horizontal line
+  doc.line(10, 216, 204, 216); // horizontal line
+  doc.line(10, 216, 10, 206); // vertical line
+  doc.line(204, 216, 204, 206); // vertical line
+  // cuadro8
+  doc.line(10, 216, 204, 216); // horizontal line
+  doc.line(10, 226, 204, 226); // horizontal line
+  doc.line(10, 216, 10, 226); // vertical line
+  doc.line(204, 216, 204, 226); // vertical line
+  // cuadro9
+  doc.line(10, 226, 204, 226); // horizontal line
+  doc.line(10, 236, 204, 236); // horizontal line
+  doc.line(10, 236, 10, 226); // vertical line
+  doc.line(204, 236, 204, 226); // vertical line
+  // cuadro10
+  doc.line(10, 236, 204, 236); // horizontal line
+  doc.line(10, 246, 204, 246); // horizontal line
+  doc.line(10, 236, 10, 246); // vertical line
+  doc.line(204, 236, 204, 246); // vertical line
+  // cuadro11
+  doc.line(10, 246, 204, 246); // horizontal line
+  doc.line(10, 256, 204, 256); // horizontal line
+  doc.line(10, 256, 10, 246); // vertical line
+  doc.line(204, 256, 204, 246); // vertical line
+  // cuadro12
+  doc.line(10, 256, 204, 256); // horizontal line
+  doc.line(10, 266, 204, 266); // horizontal line
+  doc.line(10, 256, 10, 266); // vertical line
+  doc.line(204, 256, 204, 266); // vertical line
+  // cuadro13
+  doc.line(10, 266, 204, 266); // horizontal line
+  doc.line(10, 274, 204, 274); // horizontal line
+  doc.line(10, 274, 10, 266); // vertical line
+  doc.line(204, 274, 204, 266); // vertical line
   return doc;
 };
