@@ -6,71 +6,90 @@
 
 <script>
 import jsPDF from "jspdf";
-import { logo, pdf1 } from "../helpers/logoNombreNpdf";
-import { infoInportante } from "../helpers/infoInportante";
-import { infoPdf1 } from "../helpers/infoPdf";
-import { contentApi } from "../helpers/contentApi";
+//data
+import { getInfoById } from "../selectors/getInfoById";
+//helper
+import {
+  estructuraPdf1,
+  estructuraPdf2,
+  estructuraPdf3,
+  estructuraPdf4,
+} from "../helpers/estructuraPdf";
+
+import {
+  contentApi,
+  contentApi2,
+  contentApi4,
+  contentApi3,
+} from "../helpers/contentApi";
+
 import { acroforms } from "../helpers/acroforms";
-import { contentStatico, bordesStaticos } from "../helpers/contentStatico";
+
+import {
+  logoInfoStaticos,
+  nPdfStatico1,
+  nPdfStatico2,
+  nPdfStatico3,
+  nPdfStatico4,
+  contentStatico1,
+  contentStatico2,
+  contentStatico3,
+  contentStatico4,
+  bordeStaticos,
+  infoStaticos,
+} from "../helpers/contentStatico";
 
 export default {
   name: "HelloWorld",
 
   methods: {
     save() {
+      //? Obtener los datos información personal de la api
+      const data = getInfoById(1);
+      console.log(data);
+
       //*215x280
       let doc = new jsPDF("p", "mm", [280, 215]);
-      pdf1(doc);
-      logo(doc);
-      infoInportante(doc);
-      infoPdf1(doc);
-      contentApi(doc);
+      //pdf 1
+      nPdfStatico1(doc);
+      logoInfoStaticos(doc);
+      infoStaticos(doc);
+      estructuraPdf1(doc);
+
+      //api
+      contentApi(doc, data);
+
+      contentStatico1(doc);
+      bordeStaticos(doc);
+      //pdf 2
+      doc.addPage();
+      nPdfStatico2(doc);
+      logoInfoStaticos(doc);
+      estructuraPdf2(doc);
+      contentApi2(doc);
+      contentStatico2(doc);
       acroforms(doc);
-      contentStatico(doc);
-      bordesStaticos(doc);
-      //TODO crear informacion general
+      bordeStaticos(doc);
+      //pdf 3
+      doc.addPage();
+      nPdfStatico3(doc);
+      logoInfoStaticos(doc);
+      estructuraPdf3(doc);
+      contentApi3(doc);
+      contentStatico3(doc);
+      bordeStaticos(doc);
+      //pdf 4
+      doc.addPage();
+      nPdfStatico4(doc);
+      logoInfoStaticos(doc);
+      estructuraPdf4(doc);
+      contentApi4(doc);
+      contentStatico4(doc);
+      bordeStaticos(doc);
+
       doc.save("Venta.pdf");
     },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.factura {
-  table-layout: fixed;
-  /* left: ; */
-}
-
-.fact-info > div > h5 {
-  font-weight: bold;
-}
-
-.factura > thead {
-  border-top: solid 3px #000;
-  border-bottom: 3px solid #000;
-}
-
-.factura > thead > tr > th:nth-child(2),
-.factura > tbod > tr > td:nth-child(2) {
-  width: 300px;
-}
-
-.factura > thead > tr > th:nth-child(n + 3) {
-  text-align: right;
-}
-
-.factura > tbody > tr > td:nth-child(n + 3) {
-  text-align: right;
-}
-
-.factura > tfoot > tr > th,
-.factura > tfoot > tr > th:nth-child(n + 3) {
-  font-size: 24px;
-  text-align: right;
-}
-
-.cond {
-  border-top: solid 2px #000;
-}
-</style>

@@ -10,19 +10,23 @@ export const acroforms = (doc) => {
 //     // RadioButton,
 //     // Appearance,
 //   } = jsPDF.AcroForm;
-//   doc.setFontSize(8);
+//   doc.setFontSize(10);
 //   doc.setDrawColor(0);
 
-//   doc.text("Lugar:", 11, 70.3);
+//   doc.text(
+//     "Causa o etiología del padecimiento (en caso de accidente, describa tiempo, modo y lugar donde ocurrió la lesión):",
+//     11,
+//     45
+//   );
 //   const textField = new TextField();
-//   textField.Rect = [22, 67.5, 50, 4,"F"];
+//   textField.Rect = [10, 47, 204, 40];
 //   textField.multiline = false;
-//   textField.value = "Mexico";
-//   textField.defaultValue = "Mexico";
+//   // textField.value = "Mexico";
+//   // textField.defaultValue = "Mexico";
 //   textField.fieldName = "TestTextBox";
 
 //   //SET FONT SIZE
-//   textField.maxFontSize = 7.6;
+//   textField.maxFontSize = 8;
 //   doc.addField(textField);
   return doc;
 };
