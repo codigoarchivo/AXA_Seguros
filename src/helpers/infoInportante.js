@@ -1,6 +1,6 @@
 export const infoInportante = (doc) => {
-  doc.setTextColor("blue");
-  doc.setFontSize(9.7);
+  doc.setTextColor("#00008f");
+  doc.setFontSize(9.95);
   doc.setFont("helvetica", "normal");
   doc.text("Instrucciones", 10, 40, null, null, "left");
   doc.text("1. Es necesario llenar el presente formato en su totalidad. Utilice letra de molde, legible y tinta negra.", 10, 45, null, null, "left");
