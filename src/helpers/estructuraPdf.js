@@ -2,11 +2,11 @@ export const estructuraPdf1 = (doc) => {
   doc.setDrawColor("#00008f");
   doc.setLineWidth(0.2);
   //   cuadro1
-  doc.line(10, 67, 204, 67); // horizontal line
+  doc.line(10, 66, 204, 66); // horizontal line
   doc.line(10, 72, 204, 72); // horizontal line
-  doc.line(10, 67, 10, 72); // vertical line
-  doc.line(204, 67, 204, 72); // vertical line
-  doc.line(108, 67, 108, 72); // vertical line
+  doc.line(10, 66, 10, 72); // vertical line
+  doc.line(204, 66, 204, 72); // vertical line
+  doc.line(108, 66, 108, 72); // vertical line
   //   cuadro2
   doc.setDrawColor("#FF5252");
   doc.line(10, 77, 204, 77); // horizontal line
@@ -342,40 +342,137 @@ export const estructuraPdf4 = (doc) => {
   doc.line(10, 206, 204, 206); // horizontal line
   doc.line(10, 206, 10, 198); // vertical line
   doc.line(204, 206, 204, 198); // vertical line
+  doc.line(108, 206, 108, 198); // vertical line
   // cuadro7
   doc.line(10, 206, 204, 206); // horizontal line
-  doc.line(10, 216, 204, 216); // horizontal line
-  doc.line(10, 216, 10, 206); // vertical line
-  doc.line(204, 216, 204, 206); // vertical line
+  doc.line(10, 214, 204, 214); // horizontal line
+  doc.line(10, 206, 10, 214); // vertical line
+  doc.line(204, 206, 204, 214); // vertical line
+  doc.line(108, 206, 108, 214); // vertical line
+  doc.line(50, 206, 50, 214); // vertical line
+  doc.line(150, 206, 150, 214); // vertical line
   // cuadro8
-  doc.line(10, 216, 204, 216); // horizontal line
-  doc.line(10, 226, 204, 226); // horizontal line
-  doc.line(10, 216, 10, 226); // vertical line
-  doc.line(204, 216, 204, 226); // vertical line
+  doc.line(10, 214, 204, 214); // horizontal line
+  doc.line(10, 222, 204, 222); // horizontal line
+  doc.line(10, 222, 10, 214); // vertical line
+  doc.line(204, 222, 204, 214); // vertical line
+  doc.line(108, 222, 108, 214); // vertical line
+  doc.line(50, 222, 50, 214); // vertical line
+  doc.line(150, 222, 150, 214); // vertical line
   // cuadro9
-  doc.line(10, 226, 204, 226); // horizontal line
-  doc.line(10, 236, 204, 236); // horizontal line
-  doc.line(10, 236, 10, 226); // vertical line
-  doc.line(204, 236, 204, 226); // vertical line
+  doc.line(10, 222, 204, 222); // horizontal line
+  doc.line(10, 230, 204, 230); // horizontal line
+  doc.line(10, 222, 10, 230); // vertical line
+  doc.line(204, 222, 204, 230); // vertical line
+  doc.line(108, 222, 108, 230); // vertical line
+  doc.line(50, 222, 50, 230); // vertical line
+  doc.line(150, 222, 150, 230); // vertical line
+  // cuadro9
+  doc.line(10, 230, 204, 230); // horizontal line
+  doc.line(10, 238, 204, 238); // horizontal line
+  doc.line(10, 238, 10, 230); // vertical line
+  doc.line(204, 238, 204, 230); // vertical line
+  doc.line(108, 238, 108, 230); // vertical line
+  doc.line(50, 238, 50, 230); // vertical line
+  doc.line(150, 238, 150, 230); // vertical line
   // cuadro10
-  doc.line(10, 236, 204, 236); // horizontal line
+  doc.line(10, 238, 204, 238); // horizontal line
   doc.line(10, 246, 204, 246); // horizontal line
-  doc.line(10, 236, 10, 246); // vertical line
-  doc.line(204, 236, 204, 246); // vertical line
+  doc.line(10, 238, 10, 246); // vertical line
+  doc.line(204, 238, 204, 246); // vertical line
+  doc.line(108, 238, 108, 246); // vertical line
+  doc.line(50, 238, 50, 246); // vertical line
+  doc.line(150, 238, 150, 246); // vertical line
   // cuadro11
   doc.line(10, 246, 204, 246); // horizontal line
-  doc.line(10, 256, 204, 256); // horizontal line
-  doc.line(10, 256, 10, 246); // vertical line
-  doc.line(204, 256, 204, 246); // vertical line
+  doc.line(10, 254, 204, 254); // horizontal line
+  doc.line(10, 254, 10, 246); // vertical line
+  doc.line(204, 254, 204, 246); // vertical line
+  doc.line(108, 254, 108, 246); // vertical line
+  doc.line(50, 254, 50, 246); // vertical line
+  doc.line(150, 254, 150, 246); // vertical line
   // cuadro12
-  doc.line(10, 256, 204, 256); // horizontal line
-  doc.line(10, 266, 204, 266); // horizontal line
-  doc.line(10, 256, 10, 266); // vertical line
-  doc.line(204, 256, 204, 266); // vertical line
-  // cuadro13
-  doc.line(10, 266, 204, 266); // horizontal line
-  doc.line(10, 274, 204, 274); // horizontal line
-  doc.line(10, 274, 10, 266); // vertical line
-  doc.line(204, 274, 204, 266); // vertical line
+  doc.line(10, 254, 204, 254); // horizontal line
+  doc.line(10, 262, 204, 262); // horizontal line
+  doc.line(10, 254, 10, 262); // vertical line
+  doc.line(204, 254, 204, 262); // vertical line
+  doc.line(108, 254, 108, 262); // vertical line
+  doc.line(50, 254, 50, 262); // vertical line
+  doc.line(150, 254, 150, 262); // vertical line
+  // cuadro12
+  doc.line(10, 262, 204, 262); // horizontal line
+  doc.line(10, 270, 204, 270); // horizontal line
+  doc.line(10, 270, 10, 262); // vertical line
+  doc.line(204, 270, 204, 262); // vertical line
+  doc.line(108, 270, 108, 262); // vertical line
+  doc.line(50, 270, 50, 262); // vertical line
+  doc.line(150, 270, 150, 262); // vertical line
+
+  return doc;
+};
+
+export const estructuraPdf5 = (doc) => {
+  doc.setDrawColor("#00008f");
+  doc.setLineWidth(0.2);
+  // cuadro1
+  doc.line(10, 40, 204, 40); // horizontal line
+  doc.line(10, 48, 204, 48); // horizontal line
+  doc.line(10, 40, 10, 48); // vertical line
+  doc.line(204, 40, 204, 48); // vertical line
+  doc.line(108, 40, 108, 48); // vertical line
+  // cuadro2
+  doc.line(10, 48, 204, 48); // horizontal line
+  doc.line(10, 56, 204, 56); // horizontal line
+  doc.line(10, 56, 10, 48); // vertical line
+  doc.line(204, 56, 204, 48); // vertical line
+  doc.line(108, 56, 108, 48); // vertical line
+  doc.line(50, 56, 50, 48); // vertical line
+  doc.line(150, 56, 150, 48); // vertical line
+  // cuadro3
+  doc.line(10, 56, 204, 56); // horizontal line
+  doc.line(10, 64, 204, 64); // horizontal line
+  doc.line(10, 56, 10, 64); // vertical line
+  doc.line(204, 56, 204, 64); // vertical line
+  doc.line(108, 56, 108, 64); // vertical line
+  doc.line(50, 56, 50, 64); // vertical line
+  doc.line(150, 56, 150, 64); // vertical line
+  // cuadro4
+  doc.line(10, 64, 204, 64); // horizontal line
+  doc.line(10, 80, 204, 80); // horizontal line
+  doc.line(10, 80, 10, 64); // vertical line
+  doc.line(204, 80, 204, 64); // vertical line
+  // cuadro5
+  doc.line(10, 80, 204, 80); // horizontal line
+  doc.line(10, 88, 204, 88); // horizontal line
+  doc.line(10, 80, 10, 88); // vertical line
+  doc.line(204, 80, 204, 88); // vertical line
+  doc.line(130, 80, 130, 88); // vertical line
+  // cuadro6
+  doc.line(10, 88, 204, 88); // horizontal line
+  doc.line(10, 112, 204, 112); // horizontal line
+  doc.line(10, 112, 10, 88); // vertical line
+  doc.line(204, 112, 204, 88); // vertical line
+  doc.line(130, 112, 130, 88); // vertical line
+  // cuadro7
+  doc.line(10, 112, 204, 112); // horizontal line
+  doc.line(10, 120, 204, 120); // horizontal line
+  doc.line(10, 112, 10, 120); // vertical line
+  doc.line(204, 112, 204, 120); // vertical line
+  // cuadro8
+  doc.line(10, 124, 204, 124); // horizontal line
+  doc.line(10, 152, 204, 152); // horizontal line
+  doc.line(10, 152, 10, 124); // vertical line
+  doc.line(204, 152, 204, 124); // vertical line
+  // cuadro9
+  doc.line(10, 156, 204, 156); // horizontal line
+  doc.line(10, 184, 204, 184); // horizontal line
+  doc.line(10, 184, 10, 156); // vertical line
+  doc.line(204, 184, 204, 156); // vertical line
+  // cuadro9
+  doc.line(10, 184, 204, 184); // horizontal line
+  doc.line(10, 220, 204, 220); // horizontal line
+  doc.line(10, 220, 10, 184); // vertical line
+  doc.line(204, 220, 204, 184); // vertical line
+
   return doc;
 };

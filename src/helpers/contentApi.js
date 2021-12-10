@@ -3,12 +3,12 @@ export const contentApi = (doc, data) => {
   // doc.setFont("helvetica", "bold");
   doc.text("Lugar:", 11, 70.3);
   doc.setTextColor("black");
-  doc.text(data.lugar, 20, 70.3);
+  doc.text(data.lugar, 21, 70.3);
 
   doc.setTextColor("#00008f");
   doc.text("Fecha:", 109, 70.3);
   doc.setTextColor("black");
-  doc.text(data.fecha, 118, 70.3);
+  doc.text(data.fecha, 119, 70.3);
 
   doc.setTextColor("#00008f");
   doc.text("Apellido paterno:", 11, 85);
@@ -62,18 +62,18 @@ export const contentApi = (doc, data) => {
   doc.setTextColor("#00008f");
   doc.text("Accidente", 65, 106.5);
   doc.setTextColor("#00008f");
-  doc.text("Maternidad", 119, 106.5);
+  doc.text("Maternidad", 108, 106.5);
   doc.setTextColor("#00008f");
-  doc.text("Segunda opinión médica", 170, 106.5);
+  doc.text("Segunda opinión médica", 160, 106.5);
 
   doc.setTextColor("#00008f");
   doc.text("Urgencia", 15, 116.5);
   doc.setTextColor("#00008f");
   doc.text("Hospitalización", 65, 116.5);
   doc.setTextColor("#00008f");
-  doc.text("Corta estancia / ambulatoria", 119, 116.5);
+  doc.text("Corta estancia / ambulatoria", 108, 116.5);
   doc.setTextColor("#00008f");
-  doc.text("Consultorio", 170, 116.5);
+  doc.text("Consultorio", 160, 116.5);
 
   doc.setTextColor("#00008f");
   doc.text("Cardiacos:", 15, 136);
@@ -136,7 +136,6 @@ export const contentApi = (doc, data) => {
 
   return doc;
 };
-
 export const contentApi2 = (doc) => {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
@@ -208,7 +207,6 @@ export const contentApi2 = (doc) => {
   doc.text("No", 80, 260);
   doc.text("Describa el resultado del estudio histopatológico:", 11, 264);
 };
-
 export const contentApi3 = (doc) => {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
@@ -264,7 +262,6 @@ export const contentApi3 = (doc) => {
 
   return doc;
 };
-
 export const contentApi4 = (doc) => {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
@@ -285,6 +282,99 @@ export const contentApi4 = (doc) => {
   doc.text("Cédula de especialidad:", 121, 114);
 
   doc.text("Detalle de evolución:", 11, 134);
+
+  doc.text("Médico o especialista", 40, 203.5);
+  doc.text("Médico o especialista (anestesiólogo)", 120, 203.5);
+
+  doc.text("Tipo de participación:", 11, 211);
+  doc.text("Tipo de participación:", 109, 211);
+
+  doc.text("Nombre:", 11, 219);
+  doc.text("Nombre:", 109, 219);
+
+  doc.text("Especialidad:", 11, 227);
+  doc.text("Especialidad:", 109, 227);
+
+  doc.text("Cédula profesional:", 11, 235);
+  doc.text("Cédula profesional:", 109, 235);
+
+  doc.text("Cédula de especialidad:", 11, 243);
+  doc.text("Cédula de especialidad:", 109, 243);
+
+  doc.text("RFC:", 11, 251);
+  doc.text("RFC:", 109, 251);
+
+  doc.text("Domicilio:", 11, 259);
+  doc.text("Domicilio:", 109, 259);
+
+  doc.text("Teléfono:", 11, 267);
+  doc.text("Teléfono:", 109, 267);
+
+  return doc;
+};
+export const contentApi5 = (doc) => {
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.text("Ayudante 1", 50, 45.5);
+  doc.text("Ayudante 2", 145, 45.5);
+
+  doc.text("Tipo de participación:", 11, 53.5);
+  doc.text("Tipo de participación:", 109, 53.5);
+
+  doc.text("Nombre:", 11, 61.5);
+  doc.text("Nombre:", 109, 61.5);
+
+  doc.text("Otros médicos:", 11, 68);
+
+  doc.text("Firma del médico", 55, 85.5);
+  doc.text("Lugar y fecha", 150, 85.5);
+
+  doc.text(
+    "En caso de reembolso y/o programación de servicios, el asegurado deberá llenar el siguiente apartado:",
+    11,
+    117
+  );
+
+  doc.setFontSize(9.7);
+  doc.text(
+    "Autorizo que AXA trate mis datos personales sensibles y los transfiera a médicos especialistas en México y/o en el extranjero,",
+    11,
+    160
+  );
+  doc.text(
+    "así como a prestadores de servicios médicos con los que tenga convenio, para efectos del cumplimiento de las obligaciones",
+    11,
+    164
+  );
+  doc.text("derivadas del Contrato de Seguro.", 11, 168);
+  doc.text("Sí acepto", 20, 176);
+  doc.text("No acepto", 20, 182);
+  doc.text("Firma del Asegurado:", 60, 182);
+
+  doc.text(
+    "Autorizo que AXA Seguros S.A. de C.V., al inscribirme en alguno de los programas que incluye la Póliza de gastos médicos",
+    11,
+    188
+  );
+  doc.text(
+    "mayores, transfiera mis datos personales sensibles a médicos especialistas en México y/o en el extranjero, así como a",
+    11,
+    192
+  );
+  doc.text(
+    "prestadores de servicios médicos, con la finalidad de ofrecerme los servicios de asistencia que me permitan dar seguimiento",
+    11,
+    196
+  );
+  doc.text(
+    "específico a mi padecimiento, así como solicitar una segunda opinión médica y en su caso se me ofrezcan alternativas para",
+    11,
+    200
+  );
+  doc.text("el tratamiento de mi enfermedad.", 11, 204);
+  doc.text("Sí acepto", 20, 214);
+  doc.text("No acepto", 20, 218);
+  doc.text("Firma del Asegurado:", 60, 218);
 
   return doc;
 };

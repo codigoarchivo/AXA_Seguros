@@ -14,13 +14,15 @@ import {
   estructuraPdf2,
   estructuraPdf3,
   estructuraPdf4,
+  estructuraPdf5,
 } from "../helpers/estructuraPdf";
 
 import {
   contentApi,
   contentApi2,
-  contentApi4,
   contentApi3,
+  contentApi4,
+  contentApi5
 } from "../helpers/contentApi";
 
 import { acroforms } from "../helpers/acroforms";
@@ -31,10 +33,12 @@ import {
   nPdfStatico2,
   nPdfStatico3,
   nPdfStatico4,
+  nPdfStatico5,
   contentStatico1,
   contentStatico2,
   contentStatico3,
   contentStatico4,
+  contentStatico5,
   bordeStaticos,
   infoStaticos,
 } from "../helpers/contentStatico";
@@ -85,6 +89,14 @@ export default {
       estructuraPdf4(doc);
       contentApi4(doc);
       contentStatico4(doc);
+      bordeStaticos(doc);
+      //pdf 5
+      doc.addPage();
+      nPdfStatico5(doc);
+      logoInfoStaticos(doc);
+      estructuraPdf5(doc);
+      contentApi5(doc);
+      contentStatico5(doc);
       bordeStaticos(doc);
 
       doc.save("Venta.pdf");

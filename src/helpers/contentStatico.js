@@ -94,8 +94,9 @@ export const bordeStaticos = (doc) => {
   doc.text(
     "AXA Seguros, S.A. de C.V. Félix Cuevas 366, Piso 6, Col. Tlacoquemécatl, Del. Benito Juárez, 03200, CDMX, México • Tels. 5169 1000 • 01 800 900 1292 • axa.mx ).",
     10,
-    275
+    274.5
   );
+  doc.text("AI - 346 • NOVIEMBRE 2018", 208, 230, null, -90);
   return doc;
 };
 export const contentStatico1 = (doc) => {
@@ -200,19 +201,25 @@ export const contentStatico4 = (doc) => {
   doc.setFillColor("#00008f");
   doc.rect(10, 160, 194.1, 5, "F");
   doc.setTextColor("white");
-  doc.text(
-    "Observaciones",
-    11,
-    163.6
-  );
+  doc.text("Observaciones", 11, 163.6);
   doc.setDrawColor(0);
   doc.setFillColor("#00008f");
   doc.rect(10, 194, 194.1, 5, "F");
   doc.setTextColor("white");
-  doc.text(
-    "Datos del médico",
-    11,
-    197.6
-  );
+  doc.text("Datos del médico", 11, 197.6);
+  return doc;
+};
+export const contentStatico5 = (doc) => {
+  doc.setDrawColor(0);
+  doc.setFillColor("#00008f");
+  doc.rect(10, 120, 194.1, 5, "F");
+  doc.setTextColor("white");
+  doc.text("Datos personales", 11, 123.6);
+
+  doc.setDrawColor(0);
+  doc.setFillColor("#00008f");
+  doc.rect(10, 152, 194.1, 5, "F");
+  doc.setTextColor("white");
+  doc.text("Transferencia de datos a terceros", 11, 155.6);
   return doc;
 };
