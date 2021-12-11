@@ -158,9 +158,9 @@ export const contentStatico1 = (doc) => {
 export const contentStatico2 = (doc) => {
   doc.setDrawColor(0);
   doc.setFillColor("#00008f");
-  doc.rect(10, 198, 194.1, 5, "F");
+  doc.rect(10, 178, 194.1, 5, "F");
   doc.setTextColor("white");
-  doc.text("Tratamiento", 11, 201.6);
+  doc.text("Tratamiento", 11, 181.6);
 };
 export const contentStatico3 = (doc) => {
   doc.setDrawColor(0);
