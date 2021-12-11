@@ -130,23 +130,23 @@ export const contentStatico1 = (doc) => {
   doc.setTextColor("#00008f");
   doc.text("Antecedentes patológicos (especificar fecha de inicio o ", 11, 126);
   doc.setTextColor("#00008f");
-  doc.text("tiempo con el padecimiento dd/mm/aaaa):", 11, 129);
+  doc.text("tiempo con el padecimiento dd/mm/aaaa):", 11, 130);
 
   doc.setTextColor("#00008f");
   doc.text(
-    "Antecedentes no patológicos (especificar frecuencia, cantidad",
+    "Antecedentes no patológicos (especificar frecuencia,",
     109,
     126
   );
   doc.setTextColor("#00008f");
-  doc.text("y desde cuándo):", 109, 129);
+  doc.text("cantidad y desde cuándo):", 109, 130);
 
   doc.setTextColor("#00008f");
   doc.text("Antecedentes gineco-obstétricos", 11, 163.5);
 
   doc.setTextColor("#00008f");
   doc.text("Antecedentes perinatales", 109, 162);
-  doc.text("(evolución, complicaciones, tratamientos).", 109, 165);
+  doc.text("(evolución, complicaciones, tratamientos).", 109, 165.5);
 
   doc.setDrawColor(0);
   doc.setFillColor("#00008f");

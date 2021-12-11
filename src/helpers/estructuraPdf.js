@@ -19,7 +19,7 @@ export const estructuraPdf1 = (doc) => {
   doc.line(70, 82, 70, 90); // vertical line
   doc.line(135, 82, 135, 90); // vertical line
   doc.line(204, 82, 204, 90); // vertical line
-  //   cuadro4
+  //   cuadro4 Datos
   doc.line(10, 90, 204, 90); // horizontal line
   doc.line(10, 98, 204, 98); // horizontal line
   doc.line(10, 90, 10, 98); // vertical line
@@ -30,67 +30,96 @@ export const estructuraPdf1 = (doc) => {
   doc.line(160, 90, 160, 98); // vertical line
   doc.line(175, 90, 175, 98); // vertical line
   doc.line(204, 90, 204, 98); // vertical line
-  //   cuadro5
+  //   cuadro5--
   doc.line(10, 98, 204, 98); // horizontal line
   doc.line(10, 108, 204, 108); // horizontal line
   doc.line(10, 98, 10, 108); // vertical line
   doc.line(204, 98, 204, 108); // vertical line
-  //   cuadro6
+  //   cuadro6--
   doc.line(10, 108, 204, 108); // horizontal line
   doc.line(10, 118, 204, 118); // horizontal line
   doc.line(10, 118, 10, 108); // vertical line
   doc.line(204, 118, 204, 108); // vertical line
-  //   cuadro7
+  //   cuadro7 v
   doc.line(10, 118, 204, 118); // horizontal line
-  doc.line(10, 130, 204, 130); // horizontal line
-  doc.line(10, 118, 10, 130); // vertical line
-  doc.line(108, 118, 108, 130); // vertical line
-  doc.line(204, 118, 204, 130); // vertical line
-  //   cuadro8
-  doc.line(10, 130, 204, 130); // horizontal line
+  doc.line(10, 131, 204, 131); // horizontal line
+  doc.line(10, 118, 10, 131); // vertical line
+  doc.line(108, 118, 108, 131); // vertical line
+  doc.line(204, 118, 204, 131); // vertical line
+  //   cuadro8  Antecedentes patológicos y no  patológicos 
+  doc.line(10, 131, 204, 131); // horizontal line
   doc.line(10, 159, 204, 159); // horizontal line
-  doc.line(10, 159, 10, 130); // vertical line
-  doc.line(108, 159, 108, 130); // vertical line
-  doc.line(204, 159, 204, 130); // vertical line
-  //   cuadro9
+
+  doc.line(35, 136, 52, 136); // horizontal line
+  doc.line(85, 136, 107, 136); // horizontal line
+  doc.line(128, 136, 203, 136); // horizontal line
+
+  doc.line(44, 142, 52, 142); // horizontal line
+  doc.line(85, 142, 107, 142); // horizontal line
+  doc.line(170, 142, 203, 142); // horizontal line
+
+  doc.line(35, 148, 52, 148); // horizontal line
+  doc.line(85, 148, 107, 148); // horizontal line
+  doc.line(193, 148, 203, 148); // horizontal line
+
+  doc.line(35, 154, 52, 154); // horizontal line
+  doc.line(85, 154, 107, 154); // horizontal line
+  doc.line(128, 154, 203, 154); // horizontal line
+
+  doc.line(10, 159, 10, 131); // vertical line
+  doc.line(108, 159, 108, 131); // vertical line
+  doc.line(204, 159, 204, 131); // vertical line
+  //   cuadro9 Antecedentes
   doc.line(10, 159, 204, 159); // horizontal line
-  doc.line(10, 166, 204, 166); // horizontal line
-  doc.line(10, 159, 10, 166); // vertical line
-  doc.line(108, 159, 108, 166); // vertical line
-  doc.line(204, 159, 204, 166); // vertical line
-  //   cuadro10
-  doc.line(10, 166, 204, 166); // horizontal line
-  doc.line(10, 170, 108, 170); // horizontal line
+  doc.line(10, 167, 204, 167); // horizontal line
+  doc.line(10, 159, 10, 167); // vertical line
+  doc.line(108, 159, 108, 167); // vertical line
+  doc.line(204, 159, 204, 167); // vertical line
+  //   cuadro10 Gestación:
+  doc.line(10, 167, 204, 167); // horizontal line
+  doc.line(10, 171, 108, 171); // horizontal line
+
+  doc.line(28, 170.6, 37, 170.6); // horizontal line
+  doc.line(49, 170.6, 60, 170.6); // horizontal line
+  doc.line(73, 170.6, 83, 170.6); // horizontal line
+  doc.line(100, 170.6, 107, 170.6); // horizontal line
+  doc.line(108, 190, 204, 190); // horizontal line
+  doc.line(55, 187, 107, 187); // horizontal line
+  doc.line(45, 195, 107, 195); // horizontal line
+  doc.line(143, 195, 203, 195); // horizontal line
+
   doc.line(10, 196, 204, 196); // horizontal line
-  doc.line(10, 196, 10, 166); // vertical line
-  doc.line(108, 196, 108, 166); // vertical line
-  doc.line(204, 196, 204, 166); // vertical line
-  //   cuadro11
+  doc.line(10, 196, 10, 167); // vertical line
+  doc.line(108, 196, 108, 167); // vertical line
+  doc.line(204, 196, 204, 167); // vertical line
+  //   cuadro11 
+  doc.line(10, 196, 204, 196); // horizontal line
+  doc.line(10, 202, 204, 202); // horizontal line
+  doc.line(103, 201, 204, 201); // horizontal line
+  doc.line(10, 196, 10, 202); // vertical line
+  doc.line(204, 196, 204, 202); // vertical line
+  //   cuadro12 Referido por otro médico 
   doc.line(10, 196, 204, 196); // horizontal line
   doc.line(10, 202, 204, 202); // horizontal line
   doc.line(10, 196, 10, 202); // vertical line
   doc.line(204, 196, 204, 202); // vertical line
-  //   cuadro12
-  doc.line(10, 196, 204, 196); // horizontal line
+  //   cuadro13 Padecimiento actual 
   doc.line(10, 202, 204, 202); // horizontal line
-  doc.line(10, 196, 10, 202); // vertical line
-  doc.line(204, 196, 204, 202); // vertical line
-  //   cuadro13
-  doc.line(10, 202, 204, 202); // horizontal line
-  doc.line(10, 232, 204, 232); // horizontal line
-  doc.line(10, 232, 10, 202); // vertical line
-  doc.line(204, 232, 204, 202); // vertical line
-  //   cuadro14
-  doc.line(10, 232, 204, 232); // horizontal line
-  doc.line(10, 240, 204, 240); // horizontal line
-  doc.line(10, 232, 10, 240); // vertical line
-  doc.line(204, 232, 204, 240); // vertical line
-  doc.line(108, 232, 108, 240); // vertical line
-  //   cuadro15
-  doc.line(10, 240, 204, 240); // horizontal line
-  doc.line(10, 252, 204, 252); // horizontal line
-  doc.line(10, 252, 10, 240); // vertical line
-  doc.line(204, 252, 204, 240); // vertical line
+  doc.line(10, 250, 204, 250); // horizontal line
+  doc.line(10, 250, 10, 202); // vertical line
+  doc.line(204, 250, 204, 202); // vertical line
+  //   cuadro14 Fecha de padecimiento:
+  doc.line(10, 250, 204, 250); // horizontal line
+  doc.line(10, 258, 204, 258); // horizontal line
+  doc.line(10, 250, 10, 258); // vertical line
+  doc.line(204, 250, 204, 258); // vertical line
+  doc.line(108, 250, 108, 258); // vertical line
+  //   cuadro15 Tipo de padecimiento:
+  doc.line(10, 258, 204, 258); // horizontal line
+  doc.line(10, 270, 204, 270); // horizontal line
+  doc.line(164, 269, 204, 269); // horizontal line
+  doc.line(10, 270, 10, 258); // vertical line
+  doc.line(204, 270, 204, 258); // vertical line
 
   return doc;
 };

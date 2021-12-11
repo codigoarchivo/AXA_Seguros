@@ -57,133 +57,319 @@ export const contentApi = (doc, data) => {
   nombreP.maxFontSize = 10;
   doc.addField(nombreP);
 
-  doc.setTextColor("#00008f");
+  // Datos
+  const edadP = new TextField();
   doc.text("Edad:", 11, 93);
-  doc.setTextColor("black");
-  doc.text(data.edad, 11, 96.5);
+  edadP.Rect = [11, 93.5, 8, 5];
+  edadP.multiline = true;
+  edadP.value = data.edad; //
+  edadP.fieldName = "edadP";
+  edadP.maxFontSize = 10;
+  doc.addField(edadP);
 
-  doc.setTextColor("#00008f");
+  const fechaN = new TextField();
   doc.text("Fecha de nacimiento:", 21, 93);
-  doc.setTextColor("#00008f");
   doc.text("Dia    Mes    Año", 58, 93);
-  doc.setTextColor("black");
-  doc.text(data.fechaN, 58, 97);
+  fechaN.Rect = [58, 93.5, 27, 5];
+  fechaN.multiline = true;
+  fechaN.value = data.fechaN; //
+  fechaN.fieldName = "fechaN";
+  fechaN.maxFontSize = 10;
+  doc.addField(fechaN);
 
-  doc.setTextColor("#00008f");
   doc.text("Sexo", 92, 93);
   doc.text("Masculino", 100, 96.5);
   doc.text("Femenino", 120, 96.5);
 
-  doc.setTextColor("#00008f");
+  const talla = new TextField();
   doc.text("Talla:", 142, 93);
-  doc.setTextColor("black");
-  doc.text(data.talla, 142, 96.5);
+  talla.Rect = [142, 93.5, 8, 5];
+  talla.multiline = true;
+  talla.value = data.talla; //
+  talla.fieldName = "talla";
+  talla.maxFontSize = 10;
+  doc.addField(talla);
 
-  doc.setTextColor("#00008f");
+  const peso = new TextField();
   doc.text("Peso:", 162, 93);
-  doc.setTextColor("black");
-  doc.text(`${data.peso}kg`, 162, 96.5);
+  peso.Rect = [162, 93.5, 12, 5];
+  peso.multiline = true;
+  peso.value = `${data.peso}kg`; //
+  peso.fieldName = "peso";
+  peso.maxFontSize = 10;
+  doc.addField(peso);
 
-  doc.setTextColor("#00008f");
+  const tension = new TextField();
   doc.text("Tensión arterial:", 177, 93);
-  doc.setTextColor("black");
-  doc.text(data.tension, 177, 96.5);
+  tension.Rect = [177, 93.5, 16, 5];
+  tension.multiline = true;
+  tension.value = data.tension; //
+  tension.fieldName = "tension";
+  tension.maxFontSize = 10;
+  doc.addField(tension);
 
-  doc.setTextColor("#00008f");
   doc.text("Enfermedad", 15, 106.5);
-  doc.setTextColor("#00008f");
   doc.text("Accidente", 65, 106.5);
-  doc.setTextColor("#00008f");
   doc.text("Maternidad", 108, 106.5);
-  doc.setTextColor("#00008f");
   doc.text("Segunda opinión médica", 160, 106.5);
 
-  doc.setTextColor("#00008f");
   doc.text("Urgencia", 15, 116.5);
-  doc.setTextColor("#00008f");
   doc.text("Hospitalización", 65, 116.5);
-  doc.setTextColor("#00008f");
   doc.text("Corta estancia / ambulatoria", 108, 116.5);
-  doc.setTextColor("#00008f");
   doc.text("Consultorio", 160, 116.5);
 
-  doc.setTextColor("#00008f");
+  // Antecedentes patológicos y no  patológicos
+  const cardiacos = new TextField();
   doc.text("Cardiacos:", 15, 136);
-  doc.text("Diabetes mellitus:", 15, 142);
-  doc.text("Cáncer:", 15, 148);
-  doc.text("Convulsivos:", 15, 154);
+  cardiacos.Rect = [35, 132, 17.1, 5];
+  cardiacos.multiline = true;
+  cardiacos.value = "value"; //
+  cardiacos.fieldName = "cardiacos";
+  cardiacos.maxFontSize = 10;
+  doc.addField(cardiacos);
 
-  doc.setTextColor("#00008f");
+  const hipertension = new TextField();
   doc.text("Hipertensivos:", 61, 136);
+  hipertension.Rect = [85, 132, 22, 5];
+  hipertension.multiline = true;
+  hipertension.value = "value"; //
+  hipertension.fieldName = "hipertension";
+  hipertension.maxFontSize = 10;
+  doc.addField(hipertension);
+
+  const fuma = new TextField();
+  doc.text("¿Fuma?", 115, 136);
+  fuma.Rect = [128, 132, 75, 5];
+  fuma.multiline = true;
+  fuma.value = "value"; //
+  fuma.fieldName = "fuma";
+  fuma.maxFontSize = 10;
+  doc.addField(fuma);
+
+  const diabetes = new TextField();
+  doc.text("Diabetes mellitus:", 15, 142);
+  diabetes.Rect = [44, 138, 8, 5];
+  diabetes.multiline = true;
+  diabetes.value = "value"; //
+  diabetes.fieldName = "diabetes";
+  diabetes.maxFontSize = 10;
+  doc.addField(diabetes);
+
+  const vih = new TextField();
   doc.text("VIH/SIDA:", 61, 142);
+  vih.Rect = [85, 138, 22, 5];
+  vih.multiline = true;
+  vih.value = "value"; //
+  vih.fieldName = "vih";
+  vih.maxFontSize = 10;
+  doc.addField(vih);
+
+  const bebidas = new TextField();
+  doc.text("¿Consume bebidas alcohólicas?", 115, 142);
+  bebidas.Rect = [170, 138, 33, 5];
+  bebidas.multiline = true;
+  bebidas.value = "value"; //
+  bebidas.fieldName = "bebidas";
+  bebidas.maxFontSize = 10;
+  doc.addField(bebidas);
+
+  const cancer = new TextField();
+  doc.text("Cáncer:", 15, 148);
+  cancer.Rect = [35, 144, 17, 5];
+  cancer.multiline = true;
+  cancer.value = "value"; //
+  cancer.fieldName = "cancer";
+  cancer.maxFontSize = 10;
+  doc.addField(cancer);
+
+  const hepaticos = new TextField();
   doc.text("Hepáticos:", 61, 148);
+  hepaticos.Rect = [85, 144, 22, 5];
+  hepaticos.multiline = true;
+  hepaticos.value = "value"; //
+  hepaticos.fieldName = "hepaticos";
+  hepaticos.maxFontSize = 10;
+  doc.addField(hepaticos);
+
+  const drogas = new TextField();
+  doc.text("¿Consume o ha consumido algún tipo de drogas? ", 115, 148);
+  drogas.Rect = [193, 144, 10, 5];
+  drogas.multiline = true;
+  drogas.value = "value"; //
+  drogas.fieldName = "drogas";
+  drogas.maxFontSize = 10;
+  doc.addField(drogas);
+
+  const convulsion = new TextField();
+  doc.text("Convulsivos:", 15, 154);
+  convulsion.Rect = [35, 150, 17, 5];
+  convulsion.multiline = true;
+  convulsion.value = "value"; //
+  convulsion.fieldName = "convulsion";
+  convulsion.maxFontSize = 10;
+  doc.addField(convulsion);
+
+  const otrosA = new TextField();
   doc.text("Otros:", 61, 154);
+  otrosA.Rect = [85, 150, 22, 5];
+  otrosA.multiline = true;
+  otrosA.value = "value"; //
+  otrosA.fieldName = "otrosA";
+  otrosA.maxFontSize = 10;
+  doc.addField(otrosA);
 
-  doc.setTextColor("#00008f");
-  doc.text("¿Fuma?", 110, 136);
-  doc.text("¿Consume bebidas alcohólicas?", 110, 142);
-  doc.text("¿Consume o ha consumido algún tipo de drogas? ", 110, 148);
-  doc.text("Otros", 110, 154);
+  const otrosB = new TextField();
+  doc.text("Otros", 115, 154);
+  otrosB.Rect = [128, 150, 75, 5];
+  otrosB.multiline = true;
+  otrosB.value = "value"; //
+  otrosB.fieldName = "otrosB";
+  otrosB.maxFontSize = 10;
+  doc.addField(otrosB);
 
-  doc.setTextColor("#00008f");
-  doc.text("Gestación:", 11, 169);
-  doc.text("Partos:", 35, 169);
-  doc.text("Abortos:", 60, 169);
-  doc.text("Cesáreas:", 85, 169);
+  // Gestacion
+  const gestion = new TextField();
+  doc.text("Gestación:", 11, 170);
+  gestion.Rect = [28, 166.6, 9, 5];
+  gestion.multiline = true;
+  gestion.value = "val"; //
+  gestion.fieldName = "gestion";
+  gestion.maxFontSize = 10;
+  doc.addField(gestion);
 
-  doc.setTextColor("#00008f");
+  const partos = new TextField();
+  doc.text("Partos:", 38, 170);
+  partos.Rect = [49, 166.6, 11, 5];
+  partos.multiline = true;
+  partos.value = "val"; //
+  partos.fieldName = "partos";
+  partos.maxFontSize = 10;
+  doc.addField(partos);
+
+  const abortos = new TextField();
+  doc.text("Abortos:", 60, 170);
+  abortos.Rect = [73, 166.6, 10, 5];
+  abortos.multiline = true;
+  abortos.value = "val"; //
+  abortos.fieldName = "abortos";
+  abortos.maxFontSize = 10;
+  doc.addField(abortos);
+
+  const cesareas = new TextField();
+  doc.text("Cesáreas:", 84, 170);
+  cesareas.Rect = [100, 166.6, 8, 5];
+  cesareas.multiline = true;
+  cesareas.value = "val"; //
+  cesareas.fieldName = "cesareas";
+  cesareas.maxFontSize = 10;
+  doc.addField(cesareas);
+
+  const antecedentesP = new TextField();
+  antecedentesP.Rect = [109, 168, 94, 21];
+  antecedentesP.multiline = true;
+  antecedentesP.value = "value"; //
+  antecedentesP.fieldName = "antecedentesP";
+  antecedentesP.maxFontSize = 10;
+  doc.addField(antecedentesP);
+
   doc.text("Fecha de última", 11, 174);
   doc.text("menstruación:", 11, 177);
   doc.text("Dia    Mes    Año", 58, 174);
 
-  doc.text("Especificar si recibió:", 11, 184);
+  const recibio = new TextField();
+  doc.text("Especificar si recibió", 11, 184);
   doc.text("tratamiento para infertilidad:", 11, 187);
+  recibio.Rect = [55, 182, 52, 5];
+  recibio.multiline = true;
+  recibio.value = "value"; //
+  recibio.fieldName = "recibio";
+  recibio.maxFontSize = 10;
+  doc.addField(recibio);
 
+  const evolucionA = new TextField();
   doc.text("Tiempo de evolución:", 11, 194);
-  doc.text("Tiempo de evolución:", 109, 194);
+  evolucionA.Rect = [45, 191, 62, 5];
+  evolucionA.multiline = true;
+  evolucionA.value = "value"; //
+  evolucionA.fieldName = "evolucionA";
+  evolucionA.maxFontSize = 10;
+  doc.addField(evolucionA);
 
+  // Tiempo de evolución:
+  const evolucionB = new TextField();
+  doc.text("Tiempo de evolución:", 109, 194);
+  evolucionB.Rect = [143, 191, 60, 5];
+  evolucionB.multiline = true;
+  evolucionB.value = "value"; //
+  evolucionB.fieldName = "evolucionB";
+  evolucionB.maxFontSize = 10;
+  doc.addField(evolucionB);
+
+  // Referido por otro médico 
+  const referido = new TextField();
   doc.text("Referido por otro médico o unidad: ", 11, 200);
   doc.text("Sí", 70, 200);
   doc.text("No", 80, 200);
   doc.text("¿Cuál?", 90, 200);
+  referido.Rect = [103, 196.5, 101, 5];
+  referido.multiline = true;
+  referido.value = "value"; //
+  referido.fieldName = "referido";
+  referido.maxFontSize = 10;
+  doc.addField(referido);
 
+  const padecimiento = new TextField();
   doc.text(
     "Padecimiento actual (principales signos, síntomas y detalles de evolución):",
     11,
     211
   );
+  padecimiento.Rect = [11, 213, 192, 36];
+  padecimiento.multiline = true;
+  padecimiento.value = "value"; //
+  padecimiento.fieldName = "padecimiento";
+  padecimiento.maxFontSize = 10;
+  doc.addField(padecimiento);
 
-  doc.text("Fecha de padecimiento:", 11, 235);
-  doc.text("Dia    Mes    Año", 58, 235);
-  doc.text("Fecha de diagnóstico:", 110, 235);
-  doc.text("Dia    Mes    Año", 158, 235);
 
-  doc.text("Tipo de padecimiento:", 11, 243);
+  doc.text("Fecha de padecimiento:", 11, 253);
+  doc.text("Dia    Mes    Año", 58, 253);
+  doc.text("Fecha de diagnóstico:", 110, 253);
+  doc.text("Dia    Mes    Año", 158, 253);
 
-  doc.text("Congénito", 15, 250);
-  doc.text("Adquirido", 45, 250);
-  doc.text("Agudo", 75, 250);
-  doc.text("Crónico", 100, 250);
-  doc.text("Tiempo de evolución:", 130, 250);
+  doc.text("Tipo de padecimiento:", 11, 261);
+  doc.text("Congénito", 15, 268);
+  doc.text("Adquirido", 45, 268);
+  doc.text("Agudo", 75, 268);
+  doc.text("Crónico", 100, 268);
 
+  const tiempoE = new TextField();
+  doc.text("Tiempo de evolución:", 130, 268);
+  tiempoE.Rect = [164, 264.5, 40, 5];
+  tiempoE.multiline = true;
+  tiempoE.value = "value"; //
+  tiempoE.fieldName = "tiempoE";
+  tiempoE.maxFontSize = 10;
+  doc.addField(tiempoE);
+ 
   return doc;
 };
 export const contentApi2 = (doc) => {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
   // Causa o etiología del padecimiento
-  const padecimiento = new TextField();
+  const padecimientoE = new TextField();
   doc.text(
     "Causa o etiología del padecimiento (en caso de accidente, describa tiempo, modo y lugar donde ocurrió la lesión):",
     11,
     44
   );
-  padecimiento.Rect = [11, 45, 192, 24];
-  padecimiento.multiline = true;
-  padecimiento.value = "value"; //
-  padecimiento.fieldName = "padecimiento";
-  padecimiento.maxFontSize = 10;
-  doc.addField(padecimiento);
+  padecimientoE.Rect = [11, 45, 192, 24];
+  padecimientoE.multiline = true;
+  padecimientoE.value = "value"; //
+  padecimientoE.fieldName = "padecimientoE";
+  padecimientoE.maxFontSize = 10;
+  doc.addField(padecimientoE);
 
   // Tiene relación con otro padecimiento:
   const relacion = new TextField();

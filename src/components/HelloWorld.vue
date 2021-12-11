@@ -70,7 +70,6 @@ export default {
       estructuraPdf2(doc);
       contentApi2(doc);
       contentStatico2(doc);
-      acroforms(doc);
       bordeStaticos(doc);
       //pdf 3
       doc.addPage();
@@ -97,7 +96,7 @@ export default {
       contentStatico5(doc);
       bordeStaticos(doc);
 
-      doc.save("Venta.pdf");
+      doc.save("test.pdf");
     },
   },
 };
