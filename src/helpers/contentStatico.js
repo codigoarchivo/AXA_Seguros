@@ -111,9 +111,9 @@ export const contentStatico1 = (doc) => {
 
   doc.setDrawColor(0);
   doc.setFillColor("#00008f");
-  doc.rect(10, 98, 194, 5, "F");
+  doc.rect(10, 98.5, 194, 5, "F");
   doc.setTextColor("white");
-  doc.text("Motivo de la atención médica", 11, 101.5);
+  doc.text("Motivo de la atención médica", 11, 102);
 
   doc.setDrawColor(0);
   doc.setFillColor("#00008f");

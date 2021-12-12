@@ -7,7 +7,7 @@ export const data = [
     apellidoP: "Paredes",
     apellidoM: "Quintero",
     edad:"20",
-    fechaN:"15 / 11 / 1989",
+    fechaN:"1 5 1 1 1 9 8 9",
     Sexo:"M",
     talla:"35",
     peso:"54",

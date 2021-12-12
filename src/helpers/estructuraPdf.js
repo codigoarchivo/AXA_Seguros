@@ -21,26 +21,37 @@ export const estructuraPdf1 = (doc) => {
   doc.line(204, 82, 204, 90); // vertical line
   //   cuadro4 Datos
   doc.line(10, 90, 204, 90); // horizontal line
-  doc.line(10, 98, 204, 98); // horizontal line
-  doc.line(10, 90, 10, 98); // vertical line
-  doc.line(20, 90, 20, 98); // vertical line
-  doc.line(50, 94, 50, 98); // vertical line
-  doc.line(86, 90, 86, 98); // vertical line
-  doc.line(140, 90, 140, 98); // vertical line
-  doc.line(160, 90, 160, 98); // vertical line
-  doc.line(175, 90, 175, 98); // vertical line
-  doc.line(204, 90, 204, 98); // vertical line
-  //   cuadro5--
-  doc.line(10, 98, 204, 98); // horizontal line
+  doc.line(10, 98.5, 204, 98.5); // horizontal line
+  doc.line(10, 90, 10, 98.5); // vertical line
+  doc.line(20, 90, 20, 98.5); // vertical line
+
+  doc.line(58, 94, 58, 98.5); // vertical line
+  doc.line(61, 96, 61, 98.5); // vertical line
+  doc.line(64, 94, 64, 98.5); // vertical line
+  doc.line(67, 96, 67, 98.5); // vertical line
+  doc.line(70, 94, 70, 98.5); // vertical line
+  doc.line(73, 96, 73, 98.5); // vertical line
+  doc.line(76, 94, 76, 98.5); // vertical line
+  doc.line(79, 96, 79, 98.5); // vertical line
+  doc.line(82, 94, 82, 98.5); // vertical line
+
+  doc.line(86, 90, 86, 98.5); // vertical line
+  doc.line(140, 90, 140, 98.5); // vertical line
+  doc.line(140, 90, 140, 98.5); // vertical line
+  doc.line(160, 90, 160, 98.5); // vertical line
+  doc.line(175, 90, 175, 98.5); // vertical line
+  doc.line(204, 90, 204, 98.5); // vertical line
+  //   cuadro5-- 
+  doc.line(10, 98.5, 204, 98.5); // horizontal line
   doc.line(10, 108, 204, 108); // horizontal line
-  doc.line(10, 98, 10, 108); // vertical line
-  doc.line(204, 98, 204, 108); // vertical line
-  //   cuadro6--
+  doc.line(10, 98.5, 10, 108); // vertical line
+  doc.line(204, 98.5, 204, 108); // vertical line
+  //   cuadro6-- // Motivo de la atención médica
   doc.line(10, 108, 204, 108); // horizontal line
   doc.line(10, 118, 204, 118); // horizontal line
   doc.line(10, 118, 10, 108); // vertical line
   doc.line(204, 118, 204, 108); // vertical line
-  //   cuadro7 v
+  //   cuadro7 Tipo de estancia
   doc.line(10, 118, 204, 118); // horizontal line
   doc.line(10, 131, 204, 131); // horizontal line
   doc.line(10, 118, 10, 131); // vertical line
@@ -96,6 +107,19 @@ export const estructuraPdf1 = (doc) => {
   doc.line(10, 196, 204, 196); // horizontal line
   doc.line(10, 202, 204, 202); // horizontal line
   doc.line(103, 201, 204, 201); // horizontal line
+  
+  
+  doc.line(58, 178, 82, 178); // horizontal line
+  doc.line(58, 175, 58, 178); // vertical line
+  doc.line(61, 176, 61, 178); // vertical line
+  doc.line(64, 175, 64, 178); // vertical line
+  doc.line(67, 176, 67, 178); // vertical line
+  doc.line(70, 175, 70, 178); // vertical line
+  doc.line(73, 176, 73, 178); // vertical line
+  doc.line(76, 175, 76, 178); // vertical line
+  doc.line(79, 176, 79, 178); // vertical line
+  doc.line(82, 175, 82, 178); // vertical line
+
   doc.line(10, 196, 10, 202); // vertical line
   doc.line(204, 196, 204, 202); // vertical line
   //   cuadro12 Referido por otro médico 
@@ -111,6 +135,28 @@ export const estructuraPdf1 = (doc) => {
   //   cuadro14 Fecha de padecimiento:
   doc.line(10, 250, 204, 250); // horizontal line
   doc.line(10, 258, 204, 258); // horizontal line
+
+
+  doc.line(58, 255, 58, 258); // vertical line
+  doc.line(61, 256, 61, 258); // vertical line
+  doc.line(64, 255, 64, 258); // vertical line
+  doc.line(67, 256, 67, 258); // vertical line
+  doc.line(70, 255, 70, 258); // vertical line
+  doc.line(73, 256, 73, 258); // vertical line
+  doc.line(76, 255, 76, 258); // vertical line
+  doc.line(79, 256, 79, 258); // vertical line
+  doc.line(82, 255, 82, 258); // vertical line
+
+  doc.line(158, 255, 158, 258); // vertical line
+  doc.line(161, 256, 161, 258); // vertical line
+  doc.line(164, 255, 164, 258); // vertical line
+  doc.line(167, 256, 167, 258); // vertical line
+  doc.line(170, 255, 170, 258); // vertical line
+  doc.line(173, 256, 173, 258); // vertical line
+  doc.line(176, 255, 176, 258); // vertical line
+  doc.line(179, 256, 179, 258); // vertical line
+  doc.line(182, 255, 182, 258); // vertical line
+  
   doc.line(10, 250, 10, 258); // vertical line
   doc.line(204, 250, 204, 258); // vertical line
   doc.line(108, 250, 108, 258); // vertical line
@@ -170,12 +216,44 @@ export const estructuraPdf2 = (doc) => {
   // cuadro8 Tratamiento propuesto
   doc.line(10, 182, 204, 182); // horizontal line
   doc.line(10, 196, 204, 196); // horizontal line
+
+  doc.line(144, 193, 144, 196); // vertical line
+  doc.line(147, 194, 147, 196); // vertical line
+  doc.line(150, 193, 150, 196); // vertical line
+  doc.line(153, 194, 153, 196); // vertical line
+  doc.line(156, 193, 156, 196); // vertical line
+  doc.line(159, 194, 159, 196); // vertical line
+  doc.line(162, 193, 162, 196); // vertical line
+  doc.line(165, 194, 165, 196); // vertical line
+  doc.line(168, 193, 168, 196); // vertical line  
+
   doc.line(10, 196, 10, 182); // vertical line
   doc.line(204, 196, 204, 182); // vertical line
   doc.line(140, 196, 140, 182); // vertical line
   // cuadro9 Fecha de hospitalización:
   doc.line(10, 196, 204, 196); // horizontal line
   doc.line(10, 206, 204, 206); // horizontal line
+
+  doc.line(70, 203, 70, 206); // vertical line
+  doc.line(73, 204, 73, 206); // vertical line
+  doc.line(76, 203, 76, 206); // vertical line
+  doc.line(79, 204, 79, 206); // vertical line
+  doc.line(82, 203, 82, 206); // vertical line
+  doc.line(85, 204, 85, 206); // vertical line
+  doc.line(88, 203, 88, 206); // vertical line
+  doc.line(91, 204, 91, 206); // vertical line
+  doc.line(94, 203, 94, 206); // vertical line
+
+  doc.line(150, 203, 150, 206); // vertical line
+  doc.line(153, 204, 153, 206); // vertical line
+  doc.line(156, 203, 156, 206); // vertical line
+  doc.line(159, 204, 159, 206); // vertical line
+  doc.line(162, 203, 162, 206); // vertical line
+  doc.line(165, 204, 165, 206); // vertical line
+  doc.line(168, 203, 168, 206); // vertical line
+  doc.line(171, 204, 171, 206); // vertical line
+  doc.line(174, 203, 174, 206); // vertical line
+
   doc.line(10, 196, 10, 206); // vertical line
   doc.line(204, 196, 204, 206); // vertical line
   doc.line(108, 196, 108, 206); // vertical line
@@ -187,6 +265,7 @@ export const estructuraPdf2 = (doc) => {
   // cuadro11 Sitio procedimiento:
   doc.line(10, 214, 204, 214); // horizontal line
   doc.line(10, 224, 204, 224); // horizontal line
+  doc.line(160, 223, 203, 223); // horizontal line
   doc.line(10, 214, 10, 224); // vertical line
   doc.line(204, 214, 204, 224); // vertical line
   // cuadro12 nombre del hospital:
@@ -500,6 +579,7 @@ export const estructuraPdf5 = (doc) => {
   doc.line(204, 152, 204, 124); // vertical line
   // cuadro9 Transferencia de datos a terceros
   doc.line(10, 156, 204, 156); // horizontal line
+  doc.line(10, 162, 204, 162); // horizontal line
   doc.line(10, 184, 204, 184); // horizontal line
   doc.line(100, 183, 160, 183); // horizontal line
   doc.line(10, 184, 10, 156); // vertical line

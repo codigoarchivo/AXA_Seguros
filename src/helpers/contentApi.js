@@ -1,5 +1,5 @@
 import jsPDF from "jspdf";
-const { TextField } = jsPDF.AcroForm;
+const { TextField, RadioButton, Appearance } = jsPDF.AcroForm;
 
 // textField.Q = 1; for Center alignment and textField.Q = 2; for Right alignment
 
@@ -69,7 +69,9 @@ export const contentApi = (doc, data) => {
 
   const fechaN = new TextField();
   doc.text("Fecha de nacimiento:", 21, 93);
-  doc.text("Dia    Mes    Año", 58, 93);
+  doc.text("Dia", 58, 93);
+  doc.text("Mes", 64, 93);
+  doc.text("Año", 73, 93);
   fechaN.Rect = [58, 93.5, 27, 5];
   fechaN.multiline = true;
   fechaN.value = data.fechaN; //
@@ -77,9 +79,22 @@ export const contentApi = (doc, data) => {
   fechaN.maxFontSize = 10;
   doc.addField(fechaN);
 
+  // Sexo
+  const genero = new RadioButton();
+  genero.value = "value";
+  doc.addField(genero);
+
   doc.text("Sexo", 92, 93);
-  doc.text("Masculino", 100, 96.5);
-  doc.text("Femenino", 120, 96.5);
+  doc.text("Masculino", 98, 96.5);
+  doc.text("Femenino", 122, 96.5);
+
+  const masculino = genero.createOption("masculino");
+  masculino.Rect = [92, 93.5, 4, 4];
+
+  const femenino = genero.createOption("femenino");
+  femenino.Rect = [116, 93.5, 4, 4];
+
+  genero.setAppearance(Appearance.RadioButton.Cross);
 
   const talla = new TextField();
   doc.text("Talla:", 142, 93);
@@ -108,25 +123,67 @@ export const contentApi = (doc, data) => {
   tension.maxFontSize = 10;
   doc.addField(tension);
 
-  doc.text("Enfermedad", 15, 106.5);
-  doc.text("Accidente", 65, 106.5);
-  doc.text("Maternidad", 108, 106.5);
-  doc.text("Segunda opinión médica", 160, 106.5);
+  // Motivo de la atención médica
+  const motivoA = new RadioButton();
+  motivoA.value = "value";
+  doc.addField(motivoA);
 
-  doc.text("Urgencia", 15, 116.5);
+  doc.text("Enfermedad", 18, 106.7);
+  const enfermedad = motivoA.createOption("enfermedad");
+  enfermedad.Rect = [12, 103.7, 4, 4];
+
+  doc.text("Accidente", 65, 106.7);
+  const accidente = motivoA.createOption("accidente");
+  accidente.Rect = [59, 103.7, 4, 4];
+
+  doc.text("Maternidad", 108, 106.7);
+  const maternidad = motivoA.createOption("maternidad");
+  maternidad.Rect = [102, 103.7, 4, 4];
+
+  doc.text("Segunda opinión médica", 160, 106.7);
+  const segunda = motivoA.createOption("segunda");
+  segunda.Rect = [154, 103.7, 4, 4];
+  motivoA.setAppearance(Appearance.RadioButton.Cross);
+
+  // Tipo de estancia
+  const tipoE = new RadioButton();
+  tipoE.value = "value";
+  doc.addField(tipoE);
+
+  doc.text("Urgencia", 18, 116.5);
+  const urgencia = tipoE.createOption("urgencia");
+  urgencia.Rect = [12, 113.5, 4, 4];
+
   doc.text("Hospitalización", 65, 116.5);
+  const hospitalizacion = tipoE.createOption("hospitalizacion");
+  hospitalizacion.Rect = [59, 113.5, 4, 4];
+
   doc.text("Corta estancia / ambulatoria", 108, 116.5);
+  const estancia = tipoE.createOption("estancia");
+  estancia.Rect = [102, 113.5, 4, 4];
+
   doc.text("Consultorio", 160, 116.5);
+  const consultorio = tipoE.createOption("consultorio");
+  consultorio.Rect = [154, 113.5, 4, 4];
+  tipoE.setAppearance(Appearance.RadioButton.Cross);
 
   // Antecedentes patológicos y no  patológicos
+
   const cardiacos = new TextField();
-  doc.text("Cardiacos:", 15, 136);
+  doc.text("Cardiacos:", 16, 136);
   cardiacos.Rect = [35, 132, 17.1, 5];
   cardiacos.multiline = true;
   cardiacos.value = "value"; //
   cardiacos.fieldName = "cardiacos";
   cardiacos.maxFontSize = 10;
   doc.addField(cardiacos);
+
+  const patologias1 = new RadioButton();
+  patologias1.value = "value";
+  doc.addField(patologias1);
+  const refCardiacos = patologias1.createOption("refCardiacos");
+  refCardiacos.Rect = [11, 133, 4, 4];
+  patologias1.setAppearance(Appearance.RadioButton.Cross);
 
   const hipertension = new TextField();
   doc.text("Hipertensivos:", 61, 136);
@@ -137,8 +194,15 @@ export const contentApi = (doc, data) => {
   hipertension.maxFontSize = 10;
   doc.addField(hipertension);
 
+  const patologias2 = new RadioButton();
+  patologias2.value = "value";
+  doc.addField(patologias2);
+  const refHipertencion = patologias2.createOption("refHipertencion");
+  refHipertencion.Rect = [109, 133, 4, 4];
+  patologias2.setAppearance(Appearance.RadioButton.Cross);
+
   const fuma = new TextField();
-  doc.text("¿Fuma?", 115, 136);
+  doc.text("¿Fuma?", 114, 136);
   fuma.Rect = [128, 132, 75, 5];
   fuma.multiline = true;
   fuma.value = "value"; //
@@ -146,14 +210,28 @@ export const contentApi = (doc, data) => {
   fuma.maxFontSize = 10;
   doc.addField(fuma);
 
+  const patologias3 = new RadioButton();
+  patologias3.value = "value";
+  doc.addField(patologias3);
+  const refFuma = patologias3.createOption("refFuma");
+  refFuma.Rect = [55, 133, 4, 4];
+  patologias3.setAppearance(Appearance.RadioButton.Cross);
+
   const diabetes = new TextField();
-  doc.text("Diabetes mellitus:", 15, 142);
+  doc.text("Diabetes mellitus:", 16, 142);
   diabetes.Rect = [44, 138, 8, 5];
   diabetes.multiline = true;
   diabetes.value = "value"; //
   diabetes.fieldName = "diabetes";
   diabetes.maxFontSize = 10;
   doc.addField(diabetes);
+
+  const patologias4 = new RadioButton();
+  patologias4.value = "value";
+  doc.addField(patologias4);
+  const refDiabetes = patologias4.createOption("refDiabetes");
+  refDiabetes.Rect = [11, 139, 4, 4];
+  patologias4.setAppearance(Appearance.RadioButton.Cross);
 
   const vih = new TextField();
   doc.text("VIH/SIDA:", 61, 142);
@@ -164,8 +242,15 @@ export const contentApi = (doc, data) => {
   vih.maxFontSize = 10;
   doc.addField(vih);
 
+  const patologias5 = new RadioButton();
+  patologias5.value = "value";
+  doc.addField(patologias5);
+  const refVih = patologias5.createOption("refVih");
+  refVih.Rect = [55, 139, 4, 4];
+  patologias5.setAppearance(Appearance.RadioButton.Cross);
+
   const bebidas = new TextField();
-  doc.text("¿Consume bebidas alcohólicas?", 115, 142);
+  doc.text("¿Consume bebidas alcohólicas?", 114, 142);
   bebidas.Rect = [170, 138, 33, 5];
   bebidas.multiline = true;
   bebidas.value = "value"; //
@@ -173,14 +258,28 @@ export const contentApi = (doc, data) => {
   bebidas.maxFontSize = 10;
   doc.addField(bebidas);
 
+  const patologias6 = new RadioButton();
+  patologias6.value = "value";
+  doc.addField(patologias6);
+  const refBebidas = patologias6.createOption("refBebidas");
+  refBebidas.Rect = [109, 139, 4, 4];
+  patologias6.setAppearance(Appearance.RadioButton.Cross);
+
   const cancer = new TextField();
-  doc.text("Cáncer:", 15, 148);
+  doc.text("Cáncer:", 16, 148);
   cancer.Rect = [35, 144, 17, 5];
   cancer.multiline = true;
   cancer.value = "value"; //
   cancer.fieldName = "cancer";
   cancer.maxFontSize = 10;
   doc.addField(cancer);
+
+  const patologias7 = new RadioButton();
+  patologias7.value = "value";
+  doc.addField(patologias7);
+  const refCancer = patologias7.createOption("refCancer");
+  refCancer.Rect = [11, 145, 4, 4];
+  patologias7.setAppearance(Appearance.RadioButton.Cross);
 
   const hepaticos = new TextField();
   doc.text("Hepáticos:", 61, 148);
@@ -191,8 +290,15 @@ export const contentApi = (doc, data) => {
   hepaticos.maxFontSize = 10;
   doc.addField(hepaticos);
 
+  const patologias8 = new RadioButton();
+  patologias8.value = "value";
+  doc.addField(patologias8);
+  const refHepaticos = patologias8.createOption("refHepaticos");
+  refHepaticos.Rect = [55, 145, 4, 4];
+  patologias8.setAppearance(Appearance.RadioButton.Cross);
+
   const drogas = new TextField();
-  doc.text("¿Consume o ha consumido algún tipo de drogas? ", 115, 148);
+  doc.text("¿Consume o ha consumido algún tipo de drogas? ", 114, 148);
   drogas.Rect = [193, 144, 10, 5];
   drogas.multiline = true;
   drogas.value = "value"; //
@@ -200,14 +306,28 @@ export const contentApi = (doc, data) => {
   drogas.maxFontSize = 10;
   doc.addField(drogas);
 
+  const patologias9 = new RadioButton();
+  patologias9.value = "value";
+  doc.addField(patologias9);
+  const refHaConsumido = patologias9.createOption("refHaConsumido");
+  refHaConsumido.Rect = [109, 145, 4, 4];
+  patologias9.setAppearance(Appearance.RadioButton.Cross);
+
   const convulsion = new TextField();
-  doc.text("Convulsivos:", 15, 154);
+  doc.text("Convulsivos:", 16, 154);
   convulsion.Rect = [35, 150, 17, 5];
   convulsion.multiline = true;
   convulsion.value = "value"; //
   convulsion.fieldName = "convulsion";
   convulsion.maxFontSize = 10;
   doc.addField(convulsion);
+
+  const patologias10 = new RadioButton();
+  patologias10.value = "value";
+  doc.addField(patologias10);
+  const refConvulsiones = patologias10.createOption("refConvulsiones");
+  refConvulsiones.Rect = [11, 151, 4, 4];
+  patologias10.setAppearance(Appearance.RadioButton.Cross);
 
   const otrosA = new TextField();
   doc.text("Otros:", 61, 154);
@@ -218,14 +338,28 @@ export const contentApi = (doc, data) => {
   otrosA.maxFontSize = 10;
   doc.addField(otrosA);
 
+  const patologias11 = new RadioButton();
+  patologias11.value = "value";
+  doc.addField(patologias11);
+  const refOtrosA = patologias11.createOption("refOtrosA");
+  refOtrosA.Rect = [55, 151, 4, 4];
+  patologias11.setAppearance(Appearance.RadioButton.Cross);
+
   const otrosB = new TextField();
-  doc.text("Otros", 115, 154);
+  doc.text("Otros", 114, 154);
   otrosB.Rect = [128, 150, 75, 5];
   otrosB.multiline = true;
   otrosB.value = "value"; //
   otrosB.fieldName = "otrosB";
   otrosB.maxFontSize = 10;
   doc.addField(otrosB);
+
+  const patologias12 = new RadioButton();
+  patologias12.value = "value";
+  doc.addField(patologias12);
+  const refOtrosB = patologias12.createOption("refOtrosB");
+  refOtrosB.Rect = [109, 151, 4, 4];
+  patologias12.setAppearance(Appearance.RadioButton.Cross);
 
   // Gestacion
   const gestion = new TextField();
@@ -272,9 +406,20 @@ export const contentApi = (doc, data) => {
   antecedentesP.maxFontSize = 10;
   doc.addField(antecedentesP);
 
+  const mestruacion = new TextField();
   doc.text("Fecha de última", 11, 174);
   doc.text("menstruación:", 11, 177);
-  doc.text("Dia    Mes    Año", 58, 174);
+  doc.text("Dia", 58, 174);
+  doc.text("Mes", 64, 174);
+  doc.text("Año", 73, 174);
+  mestruacion.Rect = [58, 174, 24, 5];
+  mestruacion.multiline = true;
+  mestruacion.value = "v"; //
+  mestruacion.fieldName = "mestruacion";
+  mestruacion.maxFontSize = 10;
+  mestruacion.fontSize = 10;
+  mestruacion.height = 5;
+  doc.addField(mestruacion);
 
   const recibio = new TextField();
   doc.text("Especificar si recibió", 11, 184);
@@ -305,11 +450,25 @@ export const contentApi = (doc, data) => {
   evolucionB.maxFontSize = 10;
   doc.addField(evolucionB);
 
-  // Referido por otro médico 
-  const referido = new TextField();
+  // Referido por otro médico
+
+  const referidoUd = new RadioButton();
+  referidoUd.value = "value";
+  doc.addField(referidoUd);
+
   doc.text("Referido por otro médico o unidad: ", 11, 200);
   doc.text("Sí", 70, 200);
   doc.text("No", 80, 200);
+
+  const refOtrosMs = referidoUd.createOption("refOtrosMs");
+  refOtrosMs.Rect = [65, 197, 4, 4];
+
+  const refOtrosMn = referidoUd.createOption("refOtrosMn");
+  refOtrosMn.Rect = [75, 197, 4, 4];
+
+  referidoUd.setAppearance(Appearance.RadioButton.Cross);
+
+  const referido = new TextField();
   doc.text("¿Cuál?", 90, 200);
   referido.Rect = [103, 196.5, 101, 5];
   referido.multiline = true;
@@ -331,17 +490,55 @@ export const contentApi = (doc, data) => {
   padecimiento.maxFontSize = 10;
   doc.addField(padecimiento);
 
-
+  const padecimientoF = new TextField();
   doc.text("Fecha de padecimiento:", 11, 253);
-  doc.text("Dia    Mes    Año", 58, 253);
+  doc.text("Dia", 58, 253);
+  doc.text("Mes", 64, 253);
+  doc.text("Año", 73, 253);
+  padecimientoF.Rect = [58, 254, 24, 5];
+  padecimientoF.multiline = true;
+  padecimientoF.value = "v"; //
+  padecimientoF.fieldName = "padecimientoF";
+  padecimientoF.maxFontSize = 10;
+  doc.addField(padecimientoF);
+
+  const padecimientoD = new TextField();
   doc.text("Fecha de diagnóstico:", 110, 253);
-  doc.text("Dia    Mes    Año", 158, 253);
+  doc.text("Dia", 158, 253);
+  doc.text("Mes", 164, 253);
+  doc.text("Año", 173, 253);
+  padecimientoD.Rect = [158, 254, 24, 5];
+  padecimientoD.multiline = true;
+  padecimientoD.value = "v"; //
+  padecimientoD.fieldName = "padecimientoD";
+  padecimientoD.maxFontSize = 10;
+  doc.addField(padecimientoD);
+
+  // doc.text("Dia    Mes    Año", 158, 253);
+
+  const padecimientoT = new RadioButton();
+  padecimientoT.value = "value";
+  doc.addField(padecimientoT);
 
   doc.text("Tipo de padecimiento:", 11, 261);
-  doc.text("Congénito", 15, 268);
+  doc.text("Congénito", 16, 268);
   doc.text("Adquirido", 45, 268);
   doc.text("Agudo", 75, 268);
   doc.text("Crónico", 100, 268);
+
+  const congenito = padecimientoT.createOption("congenito");
+  congenito.Rect = [11, 265, 4, 4];
+
+  const admirido = padecimientoT.createOption("admirido");
+  admirido.Rect = [40, 265, 4, 4];
+
+  const agudo = padecimientoT.createOption("agudo");
+  agudo.Rect = [70, 265, 4, 4];
+
+  const cronicoSevero = padecimientoT.createOption("cronicoSevero");
+  cronicoSevero.Rect = [95, 265, 4, 4];
+
+  padecimientoT.setAppearance(Appearance.RadioButton.Cross);
 
   const tiempoE = new TextField();
   doc.text("Tiempo de evolución:", 130, 268);
@@ -351,7 +548,7 @@ export const contentApi = (doc, data) => {
   tiempoE.fieldName = "tiempoE";
   tiempoE.maxFontSize = 10;
   doc.addField(tiempoE);
- 
+
   return doc;
 };
 export const contentApi2 = (doc) => {
@@ -372,10 +569,24 @@ export const contentApi2 = (doc) => {
   doc.addField(padecimientoE);
 
   // Tiene relación con otro padecimiento:
-  const relacion = new TextField();
+
+  const relacionT = new RadioButton();
+  relacionT.value = "value";
+  doc.addField(relacionT);
+
   doc.text("Tiene relación con otro padecimiento:", 11, 74);
   doc.text("Si", 75, 74);
   doc.text("No", 85, 74);
+
+  const realacionS = relacionT.createOption("realacionS");
+  realacionS.Rect = [70, 70.5, 4, 4];
+
+  const relacionN = relacionT.createOption("relacionN");
+  relacionN.Rect = [80, 70.5, 4, 4];
+
+  relacionT.setAppearance(Appearance.RadioButton.Cross);
+
+  const relacion = new TextField();
   doc.text("¿Cuál?", 11, 78);
   relacion.Rect = [25, 75, 90, 5];
   relacion.multiline = true;
@@ -394,6 +605,37 @@ export const contentApi2 = (doc) => {
   desde.maxFontSize = 10;
   doc.addField(desde);
 
+  const padecimientoO = new RadioButton();
+  padecimientoO.value = "value";
+  doc.addField(padecimientoO);
+
+  doc.text("El padecimiento ocasionó incapacidad:", 11, 84);
+  doc.text("Si", 20, 88);
+  doc.text("No", 40, 88);
+
+  const padecimientoS = padecimientoO.createOption("padecimientoS");
+  padecimientoS.Rect = [15, 85, 4, 4];
+
+  const padecimientoN = padecimientoO.createOption("padecimientoN");
+  padecimientoN.Rect = [35, 85, 4, 4];
+
+  padecimientoO.setAppearance(Appearance.RadioButton.Cross);
+
+  const totalParcial = new RadioButton();
+  totalParcial.value = "value";
+  doc.addField(totalParcial);
+
+  doc.text("Parcial", 58, 88);
+  doc.text("Total", 80, 88);
+
+  const parcial = totalParcial.createOption("parcial");
+  parcial.Rect = [53, 85, 4, 4];
+
+  const total = totalParcial.createOption("total");
+  total.Rect = [75, 85, 4, 4];
+
+  totalParcial.setAppearance(Appearance.RadioButton.Cross);
+
   const hasta = new TextField();
   doc.text("Hasta:", 155, 88);
   hasta.Rect = [167, 84.5, 32, 5];
@@ -402,11 +644,6 @@ export const contentApi2 = (doc) => {
   hasta.fieldName = "hasta";
   hasta.maxFontSize = 10;
   doc.addField(hasta);
-  doc.text("El padecimiento ocasionó incapacidad:", 11, 84);
-  doc.text("Si", 20, 88);
-  doc.text("No", 40, 88);
-  doc.text("Parcial", 60, 88);
-  doc.text("Total", 80, 88);
 
   // Diagnóstico
   const diagnostico = new TextField();
@@ -440,9 +677,22 @@ export const contentApi2 = (doc) => {
   escala.fieldName = "escala";
   escala.maxFontSize = 10;
   doc.addField(escala);
-  doc.text("Es cáncer:", 109, 125);
+
+  const esCancer = new RadioButton();
+  esCancer.value = "value";
+  doc.addField(esCancer);
+
+  doc.text("Es cáncer:", 108, 125);
   doc.text("Sí", 130, 125);
   doc.text("No", 145, 125);
+
+  const esCancerS = esCancer.createOption("esCancerS");
+  esCancerS.Rect = [125, 122, 4, 4];
+
+  const esCancerN = esCancer.createOption("esCancerN");
+  esCancerN.Rect = [140, 122, 4, 4];
+
+  esCancer.setAppearance(Appearance.RadioButton.Cross);
 
   // Señale los datos
   const senales = new TextField();
@@ -478,13 +728,43 @@ export const contentApi2 = (doc) => {
   propuesto.maxFontSize = 10;
   doc.addField(propuesto);
 
-  doc.text("Fecha de cirugía:", 144, 186.5);
-  doc.text("Día Mes Año", 144, 190.5);
+  // Fecha de hospitalización:
 
+  const fc = new TextField();
+  doc.text("Fecha de cirugía:", 144, 186.5);
+  doc.text("Dia", 144, 190.5);
+  doc.text("Mes", 150, 190.5);
+  doc.text("Año", 159, 190.5);
+  fc.Rect = [144, 191, 24, 5];
+  fc.multiline = true;
+  fc.value = "v"; //
+  fc.fieldName = "fc";
+  fc.maxFontSize = 10;
+  doc.addField(fc);
+
+  const fh = new TextField();
   doc.text("Fecha de hospitalización:", 11, 200);
-  doc.text("Día Mes Año", 70, 200);
+  doc.text("Dia", 70, 200);
+  doc.text("Mes", 76, 200);
+  doc.text("Año", 85, 200);
+  fh.Rect = [70, 202, 24, 5];
+  fh.multiline = true;
+  fh.value = "v"; //
+  fh.fieldName = "fh";
+  fh.maxFontSize = 10;
+  doc.addField(fh);
+
+  const fa = new TextField();
   doc.text("Fecha de alta:", 109, 200);
-  doc.text("Día Mes Año", 150, 200);
+  doc.text("Dia", 150, 200);
+  doc.text("Mes", 156, 200);
+  doc.text("Año", 165, 200);
+  fa.Rect = [150, 202, 24, 5];
+  fa.multiline = true;
+  fa.value = "v"; //
+  fa.fieldName = "fa";
+  fa.maxFontSize = 10;
+  doc.addField(fa);
 
   //Días que se brindó
   const brindo = new TextField();
@@ -496,11 +776,29 @@ export const contentApi2 = (doc) => {
   brindo.maxFontSize = 10;
   doc.addField(brindo);
 
+  const sitiosPro = new RadioButton();
+  sitiosPro.value = "value";
+  doc.addField(sitiosPro);
+
   doc.text("Sitio en el cual se realizará el procedimiento:", 11, 218);
-  doc.text("Consultorio", 15, 222);
+  doc.text("Consultorio", 16, 222);
   doc.text("Hospital", 55, 222);
   doc.text("Gabinete", 88, 222);
   doc.text("Otro", 118, 222);
+
+  const consultorio = sitiosPro.createOption("consultorio");
+  consultorio.Rect = [11, 219, 4, 4];
+
+  const hospitaln = sitiosPro.createOption("hospitaln");
+  hospitaln.Rect = [50, 219, 4, 4];
+
+  const gabinete = sitiosPro.createOption("gabinete");
+  gabinete.Rect = [83, 219, 4, 4];
+
+  const otrosSr = sitiosPro.createOption("otrosSr");
+  otrosSr.Rect = [113, 219, 4, 4];
+
+  sitiosPro.setAppearance(Appearance.RadioButton.Cross);
 
   //Sitio procedimiento:
   const especifique = new TextField();
@@ -536,19 +834,43 @@ export const contentApi2 = (doc) => {
   resultadoD.maxFontSize = 10;
   doc.addField(resultadoD);
 
+  const histopatologias = new RadioButton();
+  histopatologias.value = "value";
+  doc.addField(histopatologias);
+
   doc.text("Se realizó estudio histopatológico:", 11, 238);
   doc.text("Si", 70, 238);
   doc.text("No", 80, 238);
+
+  const histopatologiaS = histopatologias.createOption("histopatologiaS");
+  histopatologiaS.Rect = [65, 235, 4, 4];
+
+  const histopatologiaN = histopatologias.createOption("histopatologiaN");
+  histopatologiaN.Rect = [75, 235, 4, 4];
+
+  histopatologias.setAppearance(Appearance.RadioButton.Cross);
 };
 export const contentApi3 = (doc) => {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
   // Describa las complicaciones:
-  const complicaionD = new TextField();
+  const presentaronC = new RadioButton();
+  presentaronC.value = "value";
+  doc.addField(presentaronC);
+
+  doc.text("Se presentaron complicaciones:", 11, 44);
   doc.text("Describa las complicaciones:", 11, 48);
   doc.text("Si", 70, 44);
   doc.text("No", 80, 44);
-  doc.text("Se presentaron complicaciones:", 11, 44);
+
+  const presentaronCs = presentaronC.createOption("presentaronCs");
+  presentaronCs.Rect = [65, 41, 4, 4];
+
+  const presentaronCn = presentaronC.createOption("presentaronCn");
+  presentaronCn.Rect = [75, 41, 4, 4];
+
+  presentaronC.setAppearance(Appearance.RadioButton.Cross);
+  const complicaionD = new TextField();
   complicaionD.Rect = [11, 50, 192, 29];
   complicaionD.multiline = true;
   complicaionD.value = "value"; //
@@ -557,11 +879,25 @@ export const contentApi3 = (doc) => {
   doc.addField(complicaionD);
 
   // Continuará recibiendo
-  const recibiendoT = new TextField();
+
+  const continuaraF = new RadioButton();
+  continuaraF.value = "value";
+  doc.addField(continuaraF);
+
   doc.text("Continuará recibiendo tratamiento en el futuro:", 11, 84);
   doc.text("Si", 90, 84);
   doc.text("No", 100, 84);
   doc.text("Describa el tratamiento:", 11, 88);
+
+  const cuntinuaraFs = continuaraF.createOption("cuntinuaraFs");
+  cuntinuaraFs.Rect = [85, 81, 4, 4];
+
+  const continuaraFn = continuaraF.createOption("continuaraFn");
+  continuaraFn.Rect = [95, 81, 4, 4];
+
+  continuaraF.setAppearance(Appearance.RadioButton.Cross);
+
+  const recibiendoT = new TextField();
   recibiendoT.Rect = [11, 90, 192, 29];
   recibiendoT.multiline = true;
   recibiendoT.value = "value"; //
@@ -937,7 +1273,7 @@ export const contentApi3 = (doc) => {
   // secciones
   const secionesA = new TextField();
   doc.text("Días:", 11, 226.5);
-  secionesA.Rect = [20, 223.5, 42, 4.7];
+  secionesA.Rect = [20, 223.2, 42, 4.7];
   secionesA.multiline = true;
   secionesA.value = "value"; //
   secionesA.fieldName = "secionesA";
@@ -946,7 +1282,7 @@ export const contentApi3 = (doc) => {
 
   const secionesB = new TextField();
   doc.text("No. de sesiones:", 70, 226.5);
-  secionesB.Rect = [100, 223.5, 42, 4.7];
+  secionesB.Rect = [100, 223.2, 42, 4.7];
   secionesB.multiline = true;
   secionesB.value = "value"; //
   secionesB.fieldName = "secionesB";
@@ -962,10 +1298,28 @@ export const contentApi3 = (doc) => {
   diasR.maxFontSize = 10;
   doc.addField(diasR);
 
-  doc.text("Matutino", 85, 236.5);
+  const serviciosEn = new RadioButton();
+  serviciosEn.value = "value";
+  doc.addField(serviciosEn);
+
+  doc.text("Matutino", 88, 236.5);
   doc.text("Vespertino", 115, 236.5);
   doc.text("Nocturno", 145, 236.5);
   doc.text("24 horas", 175, 236.5);
+
+  const matutino = serviciosEn.createOption("matutino");
+  matutino.Rect = [83, 233, 4, 4];
+
+  const vespertino = serviciosEn.createOption("vespertino");
+  vespertino.Rect = [110, 233, 4, 4];
+
+  const nocturno = serviciosEn.createOption("nocturno");
+  nocturno.Rect = [140, 233, 4, 4];
+
+  const horaT = serviciosEn.createOption("horaT");
+  horaT.Rect = [170, 233, 4, 4];
+
+  serviciosEn.setAppearance(Appearance.RadioButton.Cross);
 
   const medicamentosT = new TextField();
   doc.text("Nombre de medicamentos:", 11, 242);
@@ -1282,33 +1636,80 @@ export const contentApi5 = (doc) => {
   doc.text(
     "En caso de reembolso y/o programación de servicios, el asegurado deberá llenar el siguiente apartado:",
     11,
-    117
+    117.5
   );
   // Datos personales
-  const personales = new TextField();
-  personales.Rect = [11, 128, 192, 22];
-  personales.multiline = true;
-  personales.value = "value";
-  personales.fieldName = "personales";
-  personales.maxFontSize = 10;
-  doc.addField(personales);
+  doc.text(
+    "AXA Seguros, S.A. de C.V. (AXA), con domicilio en Avenida Félix Cuevas número 366, piso 6, Colonia Tlacoquemécatl,",
+    11,
+    129.5
+  );
+  doc.text(
+    "Delegación Benito Juárez, C.P. 03200, Ciudad de México, llevará a cabo el tratamiento de sus datos personales para el ",
+    11,
+    133.5
+  );
+  doc.text(
+    "cumplimiento del Contrato de Seguro y demás finalidades previstas en el aviso de privacidad integral que puede consultar",
+    11,
+    137.5
+  );
+  doc.text("en axa.mx en la sección Aviso de Privacidad.", 11, 141.5);
+  const autorizoE = new RadioButton();
+  autorizoE.value = "value";
+  doc.addField(autorizoE);
 
-  // Transferencia de datos a terceros
+  doc.text(
+    "Autorizo el tratamiento y transferencia de mis datos personales patrimoniales y financieros, para efectos del",
+    22,
+    146
+  );
+
+  const sAutorizo = autorizoE.createOption("sAutorizo");
+  sAutorizo.Rect = [15, 142.5, 4, 4];
+
+  autorizoE.setAppearance(Appearance.RadioButton.Cross);
+
+  doc.text(
+    "cumplimiento del Contrato de Seguro y demás finalidades contempladas en el Aviso de Privacidad.",
+    11,
+    149.5
+  );
+
+  // llevarnos
+  doc.text(
+    "Para ser llenado por el Asegurado afectado, o en su defecto los padres o tutores en caso de ser menor de edad.",
+    11,
+    160.5
+  );
   doc.setFontSize(9.7);
+  // Transferencia de datos a terceros
   doc.text(
     "Autorizo que AXA trate mis datos personales sensibles y los transfiera a médicos especialistas en México y/o en el extranjero,",
     11,
-    160
+    166
   );
   doc.text(
     "así como a prestadores de servicios médicos con los que tenga convenio, para efectos del cumplimiento de las obligaciones",
     11,
-    164
+    169
   );
-  doc.text("derivadas del Contrato de Seguro.", 11, 168);
+  doc.text("derivadas del Contrato de Seguro.", 11, 172);
 
-  doc.text("Sí acepto", 20, 176);
+  const autorizoAxa = new RadioButton();
+  autorizoAxa.value = "value";
+  doc.addField(autorizoAxa);
+
+  doc.text("Sí acepto", 20, 177);
   doc.text("No acepto", 20, 182);
+
+  const autorizoAxaS = autorizoAxa.createOption("autorizoAxaS");
+  autorizoAxaS.Rect = [15, 174, 4, 4];
+
+  const autorizoAxaN = autorizoAxa.createOption("autorizoAxaN");
+  autorizoAxaN.Rect = [15, 179, 4, 4];
+
+  autorizoAxa.setAppearance(Appearance.RadioButton.Cross);
 
   // Datos personales
   const firmaA = new TextField();
@@ -1341,9 +1742,23 @@ export const contentApi5 = (doc) => {
     11,
     200
   );
+
   doc.text("el tratamiento de mi enfermedad.", 11, 204);
-  doc.text("Sí acepto", 20, 214);
+
+  const tratamientoE = new RadioButton();
+  tratamientoE.value = "value";
+  doc.addField(tratamientoE);
+
+  doc.text("Sí acepto", 20, 213);
   doc.text("No acepto", 20, 218);
+
+  const tratamientoEs = tratamientoE.createOption("tratamientoEs");
+  tratamientoEs.Rect = [15, 210, 4, 4];
+
+  const tratamientoEn = tratamientoE.createOption("tratamientoEn");
+  tratamientoEn.Rect = [15, 215, 4, 4];
+
+  tratamientoE.setAppearance(Appearance.RadioButton.Cross);
 
   const firmaB = new TextField();
   doc.text("Firma del Asegurado:", 60, 218);
