@@ -34,7 +34,7 @@ export const contentApi = (doc, data) => {
   doc.text("Apellido paterno:", 11, 85);
   apellido.Rect = [11, 86, 58, 5];
   // apellido.multiline = true;
-  apellido.maxLength = 32;
+  apellido.maxLength = 36;
   apellido.value = data.apellidoP; //
   apellido.fieldName = "apellido";
   apellido.maxFontSize = 10;
@@ -81,6 +81,7 @@ export const contentApi = (doc, data) => {
   fechaN.Rect = [58, 93.5, 27, 5];
   // fechaN.multiline = true;
   fechaN.maxLength = 8;
+  fechaN.comb = true;
   fechaN.value = data.fechaN; //
   fechaN.fieldName = "fechaN";
   fechaN.maxFontSize = 10;
@@ -456,6 +457,7 @@ export const contentApi = (doc, data) => {
   mestruacion.maxLength = 8;
   mestruacion.value = "v"; //
   mestruacion.fieldName = "mestruacion";
+  mestruacion.comb = true;
   mestruacion.maxFontSize = 10;
   mestruacion.height = 5;
   doc.addField(mestruacion);
@@ -475,7 +477,7 @@ export const contentApi = (doc, data) => {
   doc.text("Tiempo de evolución:", 11, 194);
   evolucionA.Rect = [45, 191, 62, 5];
   // evolucionA.multiline = true;
-  evolucionA.maxLength = 41;
+  evolucionA.maxLength = 36;
   evolucionA.value = "value"; //
   evolucionA.fieldName = "evolucionA";
   evolucionA.maxFontSize = 10;
@@ -542,6 +544,7 @@ export const contentApi = (doc, data) => {
   padecimientoF.Rect = [58, 254, 24, 5];
   // padecimientoF.multiline = true;
   padecimientoF.maxLength = 8;
+  padecimientoF.comb = true;
   padecimientoF.value = "v"; //
   padecimientoF.fieldName = "padecimientoF";
   padecimientoF.maxFontSize = 10;
@@ -555,6 +558,7 @@ export const contentApi = (doc, data) => {
   padecimientoD.Rect = [158, 254, 24, 5];
   // padecimientoD.multiline = true;
   padecimientoD.maxLength = 8;
+  padecimientoD.comb = true;
   padecimientoD.value = "v"; //
   padecimientoD.fieldName = "padecimientoD";
   padecimientoD.maxFontSize = 10;
@@ -590,7 +594,7 @@ export const contentApi = (doc, data) => {
   doc.text("Tiempo de evolución:", 130, 268);
   tiempoE.Rect = [164, 264.5, 40, 5];
   // tiempoE.multiline = true;
-  tiempoE.maxLength = 33;
+  tiempoE.maxLength = 28;
   tiempoE.value = "value"; //
   tiempoE.fieldName = "tiempoE";
   tiempoE.maxFontSize = 10;
@@ -610,10 +614,10 @@ export const contentApi2 = (doc) => {
   );
   padecimientoE.Rect = [11, 45, 192, 24];
   padecimientoE.multiline = true;
-  padecimientoE.maxLength = 12;
+  padecimientoE.maxLength = 200;
   padecimientoE.value = "value"; //
   padecimientoE.fieldName = "padecimientoE";
-  padecimientoE.maxFontSize = 500;
+  padecimientoE.maxFontSize = 10;
   doc.addField(padecimientoE);
 
   // Tiene relación con otro padecimiento:
@@ -638,7 +642,7 @@ export const contentApi2 = (doc) => {
   doc.text("¿Cuál?", 11, 78);
   relacion.Rect = [25, 75, 90, 5];
   // relacion.multiline = true;
-  relacion.maxLength = 100;
+  relacion.maxLength = 70;
   relacion.value = "value"; //
   relacion.fieldName = "relacion";
   relacion.maxFontSize = 10;
@@ -649,7 +653,7 @@ export const contentApi2 = (doc) => {
   doc.text("Desde:", 110, 88);
   desde.Rect = [122, 84.5, 32, 5];
   // desde.multiline = true;
-  desde.maxLength = 18;
+  desde.maxLength = 20;
   desde.value = "value"; //
   desde.fieldName = "desde";
   desde.maxFontSize = 10;
@@ -690,7 +694,7 @@ export const contentApi2 = (doc) => {
   doc.text("Hasta:", 155, 88);
   hasta.Rect = [167, 84.5, 32, 5];
   // hasta.multiline = true;
-  hasta.maxLength = 24;
+  hasta.maxLength = 20;
   hasta.value = "value"; //
   hasta.fieldName = "hasta";
   hasta.maxFontSize = 10;
@@ -726,7 +730,7 @@ export const contentApi2 = (doc) => {
   doc.text("Escala TNM:", 160, 125);
   escala.Rect = [180, 122, 23, 5];
   // escala.multiline = true;
-  escala.maxLength = 18;
+  escala.maxLength = 12;
   escala.value = "value"; //
   escala.fieldName = "escala";
   escala.maxFontSize = 10;
@@ -795,6 +799,7 @@ export const contentApi2 = (doc) => {
   fc.Rect = [144, 191, 24, 5];
   // fc.multiline = true;
   fc.maxLength = 8;
+  fc.comb = true;
   fc.value = "v"; //
   fc.fieldName = "fc";
   fc.maxFontSize = 10;
@@ -808,6 +813,7 @@ export const contentApi2 = (doc) => {
   fh.Rect = [70, 202, 24, 5];
   // fh.multiline = true;
   fh.maxLength = 8;
+  fh.comb = true;
   fh.value = "v"; //
   fh.fieldName = "fh";
   fh.maxFontSize = 10;
@@ -822,6 +828,7 @@ export const contentApi2 = (doc) => {
   // fa.multiline = true;
   fa.maxLength = 8;
   fa.value = "v"; //
+  fa.comb = true;
   fa.fieldName = "fa";
   fa.maxFontSize = 10;
   doc.addField(fa);
@@ -866,7 +873,7 @@ export const contentApi2 = (doc) => {
   doc.text("Especifique:", 140, 222);
   especifique.Rect = [160, 218, 43, 5];
   // especifique.multiline = true;
-  especifique.maxLength = 30;
+  especifique.maxLength = 10;
   especifique.value = "value"; //
   especifique.fieldName = "especifique";
   especifique.maxFontSize = 10;
@@ -881,7 +888,7 @@ export const contentApi2 = (doc) => {
   );
   hospital.Rect = [11, 229, 192, 5];
   hospital.multiline = true;
-  hospital.maxLength = 150;
+  hospital.maxLength = 100;
   hospital.value = "value"; //
   hospital.fieldName = "hospital";
   hospital.maxFontSize = 10;
@@ -1002,7 +1009,7 @@ export const contentApi3 = (doc) => {
   const unoA = new TextField();
   unoA.Rect = [21, 158.7, 68, 5];
   // unoA.multiline = true;
-  unoA.maxLength = 40;
+  unoA.maxLength = 52;
   unoA.value = "value"; //
   unoA.fieldName = "unoA";
   unoA.maxFontSize = 10;
@@ -1020,7 +1027,7 @@ export const contentApi3 = (doc) => {
   const unoC = new TextField();
   unoC.Rect = [121, 158.7, 38, 5];
   // unoC.multiline = true;
-  unoC.maxLength = 30;
+  unoC.maxLength = 27;
   unoC.value = "value"; //
   unoC.fieldName = "unoC";
   unoC.maxFontSize = 10;
@@ -1029,7 +1036,7 @@ export const contentApi3 = (doc) => {
   const unoD = new TextField();
   unoD.Rect = [161, 158.7, 42, 5];
   // unoD.multiline = true;
-  unoD.maxLength = 30;
+  unoD.maxLength = 27;
   unoD.value = "value"; //
   unoD.fieldName = "unoD";
   unoD.maxFontSize = 10;
@@ -1040,7 +1047,7 @@ export const contentApi3 = (doc) => {
   const dosA = new TextField();
   dosA.Rect = [21, 164.7, 68, 5];
   // dosA.multiline = true;
-  dosA.maxLength = 40;
+  dosA.maxLength = 52;
   dosA.value = "value"; //
   dosA.fieldName = "dosA";
   dosA.maxFontSize = 10;
@@ -1058,7 +1065,7 @@ export const contentApi3 = (doc) => {
   const dosC = new TextField();
   dosC.Rect = [121, 164.7, 38, 5];
   // dosC.multiline = true;
-  dosC.maxLength = 30;
+  dosC.maxLength = 27;
   dosC.value = "value"; //
   dosC.fieldName = "dosC";
   dosC.maxFontSize = 10;
@@ -1067,7 +1074,7 @@ export const contentApi3 = (doc) => {
   const dosD = new TextField();
   dosD.Rect = [161, 164.7, 42, 5];
   // dosD.multiline = true;
-  dosD.maxLength = 30;
+  dosD.maxLength = 27;
   dosD.value = "value"; //
   dosD.fieldName = "dosD";
   dosD.maxFontSize = 10;
@@ -1078,7 +1085,7 @@ export const contentApi3 = (doc) => {
   const tresA = new TextField();
   tresA.Rect = [21, 170.7, 68, 5];
   // tresA.multiline = true;
-  tresA.maxLength = 40;
+  tresA.maxLength = 52;
   tresA.value = "value"; //
   tresA.fieldName = "tresA";
   tresA.maxFontSize = 10;
@@ -1096,7 +1103,7 @@ export const contentApi3 = (doc) => {
   const tresC = new TextField();
   tresC.Rect = [121, 170.7, 38, 5];
   // tresC.multiline = true;
-  tresC.maxLength = 30;
+  tresC.maxLength = 27;
   tresC.value = "value"; //
   tresC.fieldName = "tresC";
   tresC.maxFontSize = 10;
@@ -1105,7 +1112,7 @@ export const contentApi3 = (doc) => {
   const tresD = new TextField();
   tresD.Rect = [161, 170.7, 42, 5];
   // tresD.multiline = true;
-  tresD.maxLength = 30;
+  tresD.maxLength = 27;
   tresD.value = "value"; //
   tresD.fieldName = "tresD";
   tresD.maxFontSize = 10;
@@ -1116,7 +1123,7 @@ export const contentApi3 = (doc) => {
   const cuatroA = new TextField();
   cuatroA.Rect = [21, 176.7, 68, 5];
   // cuatroA.multiline = true;
-  cuatroA.maxLength = 40;
+  cuatroA.maxLength = 52;
   cuatroA.value = "value"; //
   cuatroA.fieldName = "cuatroA";
   cuatroA.maxFontSize = 10;
@@ -1134,7 +1141,7 @@ export const contentApi3 = (doc) => {
   const cuatroC = new TextField();
   cuatroC.Rect = [121, 176.7, 38, 5];
   // cuatroC.multiline = true;
-  cuatroC.maxLength = 30;
+  cuatroC.maxLength = 27;
   cuatroC.value = "value"; //
   cuatroC.fieldName = "cuatroC";
   cuatroC.maxFontSize = 10;
@@ -1143,7 +1150,7 @@ export const contentApi3 = (doc) => {
   const cuatroD = new TextField();
   cuatroD.Rect = [161, 176.7, 42, 5];
   // cuatroD.multiline = true;
-  cuatroD.maxLength = 30;
+  cuatroD.maxLength = 27;
   cuatroD.value = "value"; //
   cuatroD.fieldName = "cuatroD";
   cuatroD.maxFontSize = 10;
@@ -1154,7 +1161,7 @@ export const contentApi3 = (doc) => {
   const cincoA = new TextField();
   cincoA.Rect = [21, 182.7, 68, 5];
   // cincoA.multiline = true;
-  cincoA.maxLength = 40;
+  cincoA.maxLength = 52;
   cincoA.value = "value"; //
   cincoA.fieldName = "cincoA";
   cincoA.maxFontSize = 10;
@@ -1172,7 +1179,7 @@ export const contentApi3 = (doc) => {
   const cincoC = new TextField();
   cincoC.Rect = [121, 182.7, 38, 5];
   // cincoC.multiline = true;
-  cincoC.maxLength = 30;
+  cincoC.maxLength = 27;
   cincoC.value = "value"; //
   cincoC.fieldName = "cincoC";
   cincoC.maxFontSize = 10;
@@ -1181,7 +1188,7 @@ export const contentApi3 = (doc) => {
   const cincoD = new TextField();
   cincoD.Rect = [161, 182.7, 42, 5];
   // cincoD.multiline = true;
-  cincoD.maxLength = 30;
+  cincoD.maxLength = 27;
   cincoD.value = "value"; //
   cincoD.fieldName = "cincoD";
   cincoD.maxFontSize = 10;
@@ -1192,7 +1199,7 @@ export const contentApi3 = (doc) => {
   const seisA = new TextField();
   seisA.Rect = [21, 188.7, 68, 5];
   // seisA.multiline = true;
-  seisA.maxLength = 40;
+  seisA.maxLength = 52;
   seisA.value = "value"; //
   seisA.fieldName = "seisA";
   seisA.maxFontSize = 10;
@@ -1210,7 +1217,7 @@ export const contentApi3 = (doc) => {
   const seisC = new TextField();
   seisC.Rect = [121, 188.7, 38, 5];
   // seisC.multiline = true;
-  seisC.maxLength = 30;
+  seisC.maxLength = 27;
   seisC.value = "value"; //
   seisC.fieldName = "seisC";
   seisC.maxFontSize = 10;
@@ -1219,7 +1226,7 @@ export const contentApi3 = (doc) => {
   const seisD = new TextField();
   seisD.Rect = [161, 188.7, 42, 5];
   // seisD.multiline = true;
-  seisD.maxLength = 30;
+  seisD.maxLength = 27;
   seisD.value = "value"; //
   seisD.fieldName = "seisD";
   seisD.maxFontSize = 10;
@@ -1230,7 +1237,7 @@ export const contentApi3 = (doc) => {
   const sieteA = new TextField();
   sieteA.Rect = [21, 194.7, 68, 5];
   // sieteA.multiline = true;
-  sieteA.maxLength = 40;
+  sieteA.maxLength = 52;
   sieteA.value = "value"; //
   sieteA.fieldName = "sieteA";
   sieteA.maxFontSize = 10;
@@ -1248,7 +1255,7 @@ export const contentApi3 = (doc) => {
   const sieteC = new TextField();
   sieteC.Rect = [121, 194.7, 38, 5];
   // sieteC.multiline = true;
-  sieteC.maxLength = 30;
+  sieteC.maxLength = 27;
   sieteC.value = "value"; //
   sieteC.fieldName = "sieteC";
   sieteC.maxFontSize = 10;
@@ -1257,7 +1264,7 @@ export const contentApi3 = (doc) => {
   const sieteD = new TextField();
   sieteD.Rect = [161, 194.7, 42, 5];
   // sieteD.multiline = true;
-  sieteD.maxLength = 30;
+  sieteD.maxLength = 27;
   sieteD.value = "value"; //
   sieteD.fieldName = "sieteD";
   sieteD.maxFontSize = 10;
@@ -1268,7 +1275,7 @@ export const contentApi3 = (doc) => {
   const ochoA = new TextField();
   ochoA.Rect = [21, 200.7, 68, 5];
   // ochoA.multiline = true;
-  ochoA.maxLength = 40;
+  ochoA.maxLength = 52;
   ochoA.value = "value"; //
   ochoA.fieldName = "ochoA";
   ochoA.maxFontSize = 10;
@@ -1286,7 +1293,7 @@ export const contentApi3 = (doc) => {
   const ochoC = new TextField();
   ochoC.Rect = [121, 200.7, 38, 5];
   // ochoC.multiline = true;
-  ochoC.maxLength = 30;
+  ochoC.maxLength = 27;
   ochoC.value = "value"; //
   ochoC.fieldName = "ochoC";
   ochoC.maxFontSize = 10;
@@ -1295,7 +1302,7 @@ export const contentApi3 = (doc) => {
   const ochoD = new TextField();
   ochoD.Rect = [161, 200.7, 42, 5];
   // ochoD.multiline = true;
-  ochoD.maxLength = 30;
+  ochoD.maxLength = 27;
   ochoD.value = "value"; //
   ochoD.fieldName = "ochoD";
   ochoD.maxFontSize = 10;
@@ -1306,7 +1313,7 @@ export const contentApi3 = (doc) => {
   const nueveA = new TextField();
   nueveA.Rect = [21, 206.7, 68, 5];
   // nueveA.multiline = true;
-  nueveA.maxLength = 40;
+  nueveA.maxLength = 52;
   nueveA.value = "value"; //
   nueveA.fieldName = "nueveA";
   nueveA.maxFontSize = 10;
@@ -1324,7 +1331,7 @@ export const contentApi3 = (doc) => {
   const nueveC = new TextField();
   nueveC.Rect = [121, 206.7, 38, 5];
   // nueveC.multiline = true;
-  nueveC.maxLength = 30;
+  nueveC.maxLength = 27;
   nueveC.value = "value"; //
   nueveC.fieldName = "nueveC";
   nueveC.maxFontSize = 10;
@@ -1333,7 +1340,7 @@ export const contentApi3 = (doc) => {
   const nueveD = new TextField();
   nueveD.Rect = [161, 206.7, 42, 5];
   // nueveD.multiline = true;
-  nueveD.maxLength = 30;
+  nueveD.maxLength = 27;
   nueveD.value = "value"; //
   nueveD.fieldName = "nueveD";
   nueveD.maxFontSize = 10;
@@ -1344,7 +1351,7 @@ export const contentApi3 = (doc) => {
   const diezA = new TextField();
   diezA.Rect = [21, 212.7, 68, 5];
   // diezA.multiline = true;
-  diezA.maxLength = 40;
+  diezA.maxLength = 52;
   diezA.value = "value"; //
   diezA.fieldName = "diezA";
   diezA.maxFontSize = 10;
@@ -1362,7 +1369,7 @@ export const contentApi3 = (doc) => {
   const diezC = new TextField();
   diezC.Rect = [121, 212.7, 38, 5];
   // diezC.multiline = true;
-  diezC.maxLength = 30;
+  diezC.maxLength = 27;
   diezC.value = "value"; //
   diezC.fieldName = "diezC";
   diezC.maxFontSize = 10;
@@ -1371,7 +1378,7 @@ export const contentApi3 = (doc) => {
   const diezD = new TextField();
   diezD.Rect = [161, 212.7, 42, 5];
   // diezD.multiline = true;
-  diezD.maxLength = 30;
+  diezD.maxLength = 27;
   diezD.value = "value"; //
   diezD.fieldName = "diezD";
   diezD.maxFontSize = 10;
@@ -1527,7 +1534,7 @@ export const contentApi4 = (doc) => {
   doc.text("Tipo de participación:", 11, 211);
   participacionA.Rect = [51, 208.5, 56, 5];
   // participacionA.multiline = true;
-  participacionA.maxLength = 35;
+  participacionA.maxLength = 45;
   participacionA.value = "value"; //
   participacionA.fieldName = "participacionA";
   participacionA.maxFontSize = 10;
@@ -1537,7 +1544,7 @@ export const contentApi4 = (doc) => {
   doc.text("Tipo de participación:", 109, 211);
   participacionB.Rect = [151, 208.5, 52, 5];
   // participacionB.multiline = true;
-  participacionB.maxLength = 30;
+  participacionB.maxLength = 45;
   participacionB.value = "value"; //
   participacionB.fieldName = "participacionB";
   participacionB.maxFontSize = 10;
@@ -1548,7 +1555,7 @@ export const contentApi4 = (doc) => {
   doc.text("Nombre:", 11, 219);
   nombreA.Rect = [51, 215.5, 56, 5];
   // nombreA.multiline = true;
-  nombreA.maxLength = 35;
+  nombreA.maxLength = 45;
   nombreA.value = "value"; //
   nombreA.fieldName = "nombreA";
   nombreA.maxFontSize = 10;
@@ -1558,7 +1565,7 @@ export const contentApi4 = (doc) => {
   doc.text("Nombre:", 109, 219);
   nombreB.Rect = [151, 215.5, 52, 5];
   // nombreB.multiline = true;
-  nombreB.maxLength = 30;
+  nombreB.maxLength = 45;
   nombreB.value = "value"; //
   nombreB.fieldName = "nombreB";
   nombreB.maxFontSize = 10;
@@ -1569,7 +1576,7 @@ export const contentApi4 = (doc) => {
   doc.text("Especialidad:", 11, 227);
   especialidadA.Rect = [51, 223.5, 56, 5];
   // especialidadA.multiline = true;
-  especialidadA.maxLength = 35;
+  especialidadA.maxLength = 45;
   especialidadA.value = "value"; //
   especialidadA.fieldName = "especialidadA";
   especialidadA.maxFontSize = 10;
@@ -1579,7 +1586,7 @@ export const contentApi4 = (doc) => {
   doc.text("Especialidad:", 109, 227);
   especialidadB.Rect = [151, 223.5, 52, 5];
   // especialidadB.multiline = true;
-  especialidadB.maxLength = 30;
+  especialidadB.maxLength = 45;
   especialidadB.value = "value"; //
   especialidadB.fieldName = "especialidadB";
   especialidadB.maxFontSize = 10;
@@ -1590,7 +1597,7 @@ export const contentApi4 = (doc) => {
   doc.text("Cédula profesional:", 11, 235);
   cedulaA.Rect = [51, 231.5, 56, 5];
   // cedulaA.multiline = true;
-  cedulaA.maxLength = 35;
+  cedulaA.maxLength = 45;
   cedulaA.value = "value"; //
   cedulaA.fieldName = "cedulaA";
   cedulaA.maxFontSize = 10;
@@ -1600,7 +1607,7 @@ export const contentApi4 = (doc) => {
   doc.text("Cédula profesional:", 109, 235);
   cedulaB.Rect = [151, 231.5, 52, 5];
   // cedulaB.multiline = true;
-  cedulaB.maxLength = 30;
+  cedulaB.maxLength = 45;
   cedulaB.value = "value"; //
   cedulaB.fieldName = "cedulaB";
   cedulaB.maxFontSize = 10;
@@ -1611,7 +1618,7 @@ export const contentApi4 = (doc) => {
   doc.text("Cédula de especialidad:", 11, 243);
   cedulaEspeA.Rect = [51, 239.5, 56, 5];
   // cedulaEspeA.multiline = true;
-  cedulaEspeA.maxLength = 35;
+  cedulaEspeA.maxLength = 45;
   cedulaEspeA.value = "value"; //
   cedulaEspeA.fieldName = "cedulaEspeA";
   cedulaEspeA.maxFontSize = 10;
@@ -1621,7 +1628,7 @@ export const contentApi4 = (doc) => {
   doc.text("Cédula de especialidad:", 109, 243);
   cedulaEspeB.Rect = [151, 239.5, 52, 5];
   // cedulaEspeB.multiline = true;
-  cedulaEspeB.maxLength = 30;
+  cedulaEspeB.maxLength = 45;
   cedulaEspeB.value = "value"; //
   cedulaEspeB.fieldName = "cedulaEspeB";
   cedulaEspeB.maxFontSize = 10;
@@ -1632,7 +1639,7 @@ export const contentApi4 = (doc) => {
   doc.text("RFC:", 11, 251);
   rfcA.Rect = [51, 247.5, 56, 5];
   // rfcA.multiline = true;
-  rfcA.maxLength = 35;
+  rfcA.maxLength = 45;
   rfcA.value = "value"; //
   rfcA.fieldName = "rfcA";
   rfcA.maxFontSize = 10;
@@ -1642,7 +1649,7 @@ export const contentApi4 = (doc) => {
   doc.text("RFC:", 109, 251);
   rfcB.Rect = [151, 247.5, 52, 5];
   // rfcB.multiline = true;
-  rfcB.maxLength = 30;
+  rfcB.maxLength = 45;
   rfcB.value = "value"; //
   rfcB.fieldName = "rfcB";
   rfcB.maxFontSize = 10;
@@ -1653,7 +1660,7 @@ export const contentApi4 = (doc) => {
   doc.text("Domicilio:", 11, 259);
   domicilioA.Rect = [51, 255.5, 56, 5];
   // domicilioA.multiline = true;
-  domicilioA.maxLength = 35;
+  domicilioA.maxLength = 45;
   domicilioA.value = "value"; //
   domicilioA.fieldName = "domicilioA";
   domicilioA.maxFontSize = 10;
@@ -1663,7 +1670,7 @@ export const contentApi4 = (doc) => {
   doc.text("Domicilio:", 109, 259);
   domicilioB.Rect = [151, 255.5, 52, 5];
   // domicilioB.multiline = true;
-  domicilioB.maxLength = 30;
+  domicilioB.maxLength = 45;
   domicilioB.value = "value"; //
   domicilioB.fieldName = "domicilioB";
   domicilioB.maxFontSize = 10;
@@ -1674,7 +1681,7 @@ export const contentApi4 = (doc) => {
   doc.text("Teléfono:", 11, 267);
   telefonoA.Rect = [51, 263.5, 56, 5];
   // telefonoA.multiline = true;
-  telefonoA.maxLength = 35;
+  telefonoA.maxLength = 45;
   telefonoA.value = "value"; //
   telefonoA.fieldName = "telefonoA";
   telefonoA.maxFontSize = 10;
@@ -1684,7 +1691,7 @@ export const contentApi4 = (doc) => {
   doc.text("Teléfono:", 109, 267);
   telefonoB.Rect = [151, 263.5, 52, 5];
   // telefonoB.multiline = true;
-  telefonoB.maxLength = 30;
+  telefonoB.maxLength = 45;
   telefonoB.value = "value"; //
   telefonoB.fieldName = "telefonoB";
   telefonoB.maxFontSize = 10;
@@ -1703,7 +1710,7 @@ export const contentApi5 = (doc) => {
   doc.text("Tipo de participación:", 11, 53.5);
   participacioA.Rect = [51, 50, 56, 5];
   // participacioA.multiline = true;
-  participacioA.maxLength = 35;
+  participacioA.maxLength = 45;
   participacioA.value = "value"; //
   participacioA.fieldName = "participacioA";
   participacioA.maxFontSize = 10;
@@ -1713,7 +1720,7 @@ export const contentApi5 = (doc) => {
   doc.text("Tipo de participación:", 109, 53.5);
   participacioB.Rect = [151, 50, 52, 5];
   // participacioB.multiline = true;
-  participacioB.maxLength = 34;
+  participacioB.maxLength = 40;
   participacioB.value = "value"; //
   participacioB.fieldName = "participacioB";
   participacioB.maxFontSize = 10;
@@ -1724,7 +1731,7 @@ export const contentApi5 = (doc) => {
   doc.text("Nombre:", 11, 61.5);
   nombresA.Rect = [51, 57.5, 56, 5];
   // nombresA.multiline = true;
-  nombresA.maxLength = 35;
+  nombresA.maxLength = 45;
   nombresA.value = "value"; //
   nombresA.fieldName = "nombresA";
   nombresA.maxFontSize = 10;
@@ -1734,33 +1741,33 @@ export const contentApi5 = (doc) => {
   doc.text("Nombre:", 109, 61.5);
   nombresB.Rect = [151, 57.5, 52, 5];
   // nombresB.multiline = true;
-  nombresB.maxLength = 30;
+  nombresB.maxLength = 40;
   nombresB.value = "value"; //
   nombresB.fieldName = "nombresB";
   nombresB.maxFontSize = 10;
   doc.addField(nombresB);
 
   //médico
-  const medico = new TextField();
+  const otrosMedico = new TextField();
   doc.text("Otros médicos:", 11, 68);
-  medico.Rect = [12, 69, 190, 10];
-  medico.multiline = true;
-  medico.maxLength = 200;
-  medico.value = "value";
-  medico.fieldName = "medico";
-  medico.maxFontSize = 10;
-  doc.addField(medico);
+  otrosMedico.Rect = [12, 69, 190, 10];
+  otrosMedico.multiline = true;
+  otrosMedico.maxLength = 200;
+  otrosMedico.value = "value";
+  otrosMedico.fieldName = "otrosMedico";
+  otrosMedico.maxFontSize = 10;
+  doc.addField(otrosMedico);
 
   //Firma
-  const firma = new TextField();
+  const firmadelMe = new TextField();
   doc.text("Firma del médico", 55, 85.5);
-  firma.Rect = [11, 90, 118, 21];
-  firma.multiline = true;
-  firma.maxLength = 12;
-  firma.value = "value";
-  firma.fieldName = "firma";
-  firma.maxFontSize = 300;
-  doc.addField(firma);
+  firmadelMe.Rect = [11, 90, 118, 21];
+  firmadelMe.multiline = true;
+  firmadelMe.maxLength = 200;
+  firmadelMe.value = "value";
+  firmadelMe.fieldName = "firmadelMe";
+  firmadelMe.maxFontSize = 10;
+  doc.addField(firmadelMe);
 
   //lugar
   const lugarF = new TextField();
@@ -1856,7 +1863,7 @@ export const contentApi5 = (doc) => {
   doc.text("Firma del Asegurado:", 60, 182);
   firmaA.Rect = [100, 178, 60, 5];
   // firmaA.multiline = true;
-  firmaA.maxLength = 35;
+  firmaA.maxLength = 45;
   firmaA.value = "value";
   firmaA.fieldName = "firmaA";
   firmaA.maxFontSize = 10;
@@ -1905,7 +1912,7 @@ export const contentApi5 = (doc) => {
   doc.text("Firma del Asegurado:", 60, 218);
   firmaB.Rect = [100, 214, 60, 5];
   // firmaB.multiline = true;
-  firmaB.maxLength = 35;
+  firmaB.maxLength = 45;
   firmaB.value = "value";
   firmaB.fieldName = "firmaB";
   firmaB.maxFontSize = 10;

@@ -51,7 +51,7 @@ export default {
       console.log(data);
 
       //*215x280
-      let doc = new jsPDF("p", "mm", [280, 215]);
+      const doc = new jsPDF("p", "mm", [280, 215]);
       //pdf 1
       nPdfStatico1(doc);
       logoInfoStaticos(doc);
