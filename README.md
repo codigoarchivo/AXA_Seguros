@@ -1,24 +1,10 @@
-# my-project
+# AXA_Seguros
 
-## Project setup
-```
-yarn install
-```
+Este es un proyecto creado con vue, algunas herramientas que se implementaron fueron:
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+* jspdf
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Modo de empleo
+* yarn install 
+* yarn dev
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
